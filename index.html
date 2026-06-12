@@ -8,66 +8,78 @@
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#1a3a1a;min-height:100vh;display:flex;justify-content:center;}
 .app{width:100%;max-width:480px;min-height:100vh;background:#fff;display:flex;flex-direction:column;}
-.hdr{background:linear-gradient(135deg,#e85d04,#f48c06);padding:14px 20px 12px;color:#fff;text-align:center;position:relative;overflow:hidden;flex-shrink:0;}
+.hdr{background:linear-gradient(135deg,#e85d04,#f48c06);padding:13px 20px 11px;color:#fff;text-align:center;position:relative;overflow:hidden;flex-shrink:0;}
 .hdr::after{content:'🦕';position:absolute;right:12px;top:8px;font-size:44px;opacity:.18;pointer-events:none;}
 .hdr h1{font-size:20px;font-weight:800;}
-.hdr-stats{display:flex;justify-content:center;gap:20px;margin-top:6px;}
-.hdr-stat{font-size:12px;opacity:.9;}
-.hdr-stat span{font-weight:700;font-size:14px;}
+.hdr-stats{display:flex;justify-content:center;gap:18px;margin-top:5px;}
+.hdr-stat{font-size:12px;opacity:.9;} .hdr-stat span{font-weight:700;font-size:14px;}
 .nav{display:flex;border-bottom:2px solid #f0f0f0;flex-shrink:0;}
-.nav-btn{flex:1;padding:10px 4px;background:none;border:none;border-bottom:3px solid transparent;font-size:11px;font-weight:600;color:#aaa;cursor:pointer;transition:.2s;}
+.nav-btn{flex:1;padding:9px 2px;background:none;border:none;border-bottom:3px solid transparent;font-size:10px;font-weight:600;color:#aaa;cursor:pointer;transition:.2s;}
 .nav-btn.active{color:#e85d04;border-color:#e85d04;}
 .main{flex:1;overflow-y:auto;padding:16px;}
-.screen{display:none;}
-.screen.active{display:block;animation:fadein .25s ease;}
+.screen{display:none;} .screen.active{display:block;animation:fadein .25s ease;}
 @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-/* ---- SOROBAN ---- */
-.soroban-outer{
-  background:linear-gradient(160deg,#f5d080,#c08010);
-  border-radius:14px;border:5px solid #7a4f00;
-  padding:10px 8px 6px;margin:12px 0;
-  box-shadow:0 4px 20px rgba(0,0,0,.25);
-  user-select:none;-webkit-user-select:none;
-}
+/* ===== SOROBAN ===== */
+.soroban-outer{background:linear-gradient(160deg,#f5d080,#c08010);border-radius:14px;border:5px solid #7a4f00;padding:10px 8px 6px;margin:12px 0;box-shadow:0 4px 20px rgba(0,0,0,.25);user-select:none;-webkit-user-select:none;}
 .soroban-bar{height:10px;background:#7a4f00;border-radius:6px;margin:5px 0;}
 .soroban-rods{display:flex;justify-content:center;align-items:flex-start;gap:6px;}
 .rod-wrap{display:flex;flex-direction:column;align-items:center;}
-.rod-col{position:relative;width:42px;height:244px;}
+.rod-col{position:relative;width:44px;height:244px;}
 .rod-stick{position:absolute;left:50%;transform:translateX(-50%);width:4px;top:0;bottom:30px;background:#5a3800;border-radius:2px;z-index:0;}
 .heaven-zone{position:absolute;top:0;left:0;right:0;height:70px;}
 .rod-divider{position:absolute;top:70px;left:0;right:0;height:5px;background:#5a3800;border-radius:2px;z-index:2;}
 .earth-zone{position:absolute;top:75px;left:0;right:0;height:160px;}
-.bead-h,.bead-e{
-  position:absolute;left:50%;transform:translateX(-50%);
-  width:34px;height:34px;border-radius:50%;
-  cursor:pointer;z-index:1;
-  transition:top .2s cubic-bezier(.4,0,.2,1),box-shadow .15s,background .15s;
-  display:flex;align-items:center;justify-content:center;
-}
-.bead-h{
-  background:radial-gradient(circle at 35% 35%,#ff9090,#cc2020);
-  border:2px solid #991010;
-  box-shadow:0 2px 6px rgba(0,0,0,.35),inset 0 1px 3px rgba(255,200,200,.5);
-}
-.bead-h.active{
-  background:radial-gradient(circle at 35% 35%,#ff4040,#990000);
-  box-shadow:0 3px 12px rgba(200,0,0,.5),inset 0 1px 2px rgba(255,150,150,.5);
-}
-.bead-e{
-  background:radial-gradient(circle at 35% 35%,#ffc070,#d06000);
-  border:2px solid #a04800;
-  box-shadow:0 2px 6px rgba(0,0,0,.3),inset 0 1px 3px rgba(255,220,160,.5);
-}
-.bead-e.active{
-  background:radial-gradient(circle at 35% 35%,#ff9820,#b84000);
-  box-shadow:0 3px 12px rgba(200,80,0,.45),inset 0 1px 2px rgba(255,180,80,.5);
-}
+.bead-h,.bead-e{position:absolute;left:50%;transform:translateX(-50%);width:36px;height:36px;border-radius:50%;cursor:pointer;z-index:1;transition:top .2s cubic-bezier(.4,0,.2,1),box-shadow .15s,background .15s;}
+.bead-h{background:radial-gradient(circle at 35% 35%,#ff9090,#cc2020);border:2px solid #991010;box-shadow:0 2px 7px rgba(0,0,0,.35),inset 0 1px 3px rgba(255,200,200,.5);}
+.bead-h.active{background:radial-gradient(circle at 35% 35%,#ff3030,#990000);box-shadow:0 3px 14px rgba(200,0,0,.55),inset 0 1px 2px rgba(255,150,150,.5);}
+.bead-e{background:radial-gradient(circle at 35% 35%,#ffc070,#d06000);border:2px solid #a04800;box-shadow:0 2px 7px rgba(0,0,0,.3),inset 0 1px 3px rgba(255,220,160,.5);}
+.bead-e.active{background:radial-gradient(circle at 35% 35%,#ff9820,#b84000);box-shadow:0 3px 14px rgba(200,80,0,.5),inset 0 1px 2px rgba(255,180,80,.5);}
 .bead-h:active,.bead-e:active{transform:translateX(-50%) scale(1.12);}
 .rod-label{font-size:9px;font-weight:700;color:#5a3800;margin-top:4px;text-align:center;}
 .soroban-val{text-align:center;font-size:28px;font-weight:800;color:#5a3800;margin-top:6px;min-height:38px;letter-spacing:1px;}
+.soroban-outer.demo-mode .bead-h,.soroban-outer.demo-mode .bead-e{cursor:default;}
 
-/* ---- CHALLENGE UI ---- */
+/* ===== LESSON LIST ===== */
+.learn-intro{background:linear-gradient(135deg,#e0f2fe,#bae6fd);border-radius:14px;padding:16px;margin-bottom:16px;border:2px solid #7dd3fc;}
+.learn-intro-title{font-size:16px;font-weight:800;color:#0369a1;margin-bottom:6px;}
+.learn-intro-text{font-size:13px;color:#0c4a6e;line-height:1.5;}
+.lesson-card{border-radius:14px;margin-bottom:10px;border:2px solid #eee;padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;background:#fafafa;transition:.15s;}
+.lesson-card:hover{border-color:#e85d04;background:#fff8f4;}
+.lesson-card.done{background:linear-gradient(90deg,#d1fae5,#a7f3d0);border-color:#34d399;}
+.lesson-card.locked{opacity:.45;cursor:not-allowed;pointer-events:none;}
+.lesson-em{font-size:36px;flex-shrink:0;}
+.lesson-info{flex:1;}
+.lesson-num{font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.5px;}
+.lesson-title{font-size:14px;font-weight:700;color:#222;margin-top:2px;}
+.lesson-sub{font-size:12px;color:#777;margin-top:2px;}
+.lesson-badge{font-size:18px;flex-shrink:0;}
+
+/* ===== ACTIVE LESSON ===== */
+.step-dots{display:flex;justify-content:center;gap:5px;margin-bottom:14px;}
+.step-dot{width:8px;height:8px;border-radius:50%;background:#ddd;transition:.3s;}
+.step-dot.curr{background:#e85d04;width:22px;border-radius:4px;}
+.step-dot.done{background:#34d399;}
+.step-box{background:#f8f9fa;border-radius:14px;padding:20px 16px;text-align:center;margin-bottom:14px;border:2px solid #eee;}
+.step-icon-big{font-size:56px;margin-bottom:10px;display:block;}
+.step-title{font-size:18px;font-weight:800;color:#222;margin-bottom:10px;}
+.step-text{font-size:14px;color:#444;line-height:1.7;text-align:left;}
+.step-hint{background:#fff8f4;border:2px solid #ffd0b3;border-radius:10px;padding:10px 12px;margin-top:12px;font-size:13px;color:#c2410c;font-weight:600;text-align:left;}
+.step-hint::before{content:'💡 ';}
+.op-card{background:#f0f9ff;border:2px solid #7dd3fc;border-radius:14px;padding:14px 16px;text-align:center;margin-bottom:10px;}
+.op-label{font-size:11px;font-weight:700;text-transform:uppercase;color:#0369a1;letter-spacing:.5px;margin-bottom:6px;}
+.op-depart{font-size:14px;color:#0369a1;font-weight:600;margin-bottom:4px;}
+.op-expr{font-size:44px;font-weight:800;color:#0c4a6e;line-height:1.1;}
+.try-target{background:linear-gradient(135deg,#e85d04,#f48c06);color:#fff;border-radius:12px;padding:12px;text-align:center;margin-bottom:10px;}
+.try-target-lbl{font-size:11px;font-weight:700;text-transform:uppercase;opacity:.85;margin-bottom:4px;}
+.try-target-num{font-size:44px;font-weight:800;line-height:1;}
+.lesson-nav{display:flex;gap:8px;margin-top:4px;}
+.btn-prev{flex:0 0 auto;padding:13px 16px;background:#f0f0f0;color:#555;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;}
+.btn-next{flex:1;padding:13px;background:linear-gradient(135deg,#e85d04,#f48c06);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;}
+.btn-next:active,.btn-prev:active{transform:scale(.97);}
+.try-ans-row{display:flex;gap:8px;margin-bottom:10px;}
+
+/* ===== CHALLENGE UI ===== */
 .ch-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:8px;}
 .ch-world-tag{font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;color:#fff;white-space:nowrap;}
 .ch-err-tag{font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;background:#f0f0f0;color:#777;}
@@ -84,7 +96,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .ans-row{display:flex;gap:8px;margin-bottom:10px;}
 .ans-input{flex:1;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:22px;font-weight:700;text-align:center;}
 .ans-input:focus{outline:none;border-color:#e85d04;}
-.btn-ok{flex:1;padding:13px;background:linear-gradient(135deg,#e85d04,#f48c06);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:.15s;}
+.btn-ok{flex:1;padding:13px;background:linear-gradient(135deg,#e85d04,#f48c06);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;}
 .btn-ok:active{transform:scale(.97);}
 .btn-check{width:100%;padding:13px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-bottom:10px;}
 .btn-back{width:100%;padding:11px;background:#f0f0f0;color:#666;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;}
@@ -101,7 +113,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .seq-step.curr{background:#e85d04;color:#fff;border-color:#c04000;}
 .seq-step.done{background:#d1fae5;color:#065f46;border-color:#34d399;}
 
-/* ---- WORLD MAP ---- */
+/* ===== WORLD MAP ===== */
 .world-card{border-radius:14px;margin-bottom:12px;border:2px solid #eee;overflow:hidden;}
 .world-card.locked{opacity:.5;}
 .world-head{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;}
@@ -122,7 +134,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .ch-row.done .ch-row-name{color:#065f46;}
 .ch-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:12px;color:#fff;flex-shrink:0;}
 
-/* ---- REWARDS / STATS ---- */
+/* ===== REWARDS / STATS ===== */
 .section-title{font-size:15px;font-weight:700;color:#333;margin:16px 0 10px;}
 .streak-banner{background:linear-gradient(135deg,#fff3cd,#ffd966);border-radius:14px;padding:16px;display:flex;align-items:center;gap:14px;margin-bottom:8px;border:2px solid #f0b800;}
 .badge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px;}
@@ -138,7 +150,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .stat-val{font-size:28px;font-weight:800;color:#e85d04;}
 .stat-label{font-size:11px;color:#777;font-weight:600;margin-top:2px;}
 
-/* ---- MODAL ---- */
+/* ===== MODAL ===== */
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;}
 .modal.open{display:flex;}
 .modal-box{background:#fff;border-radius:20px;padding:32px 24px;text-align:center;max-width:320px;width:100%;animation:popin .3s cubic-bezier(.34,1.56,.64,1);}
@@ -148,11 +160,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .modal-pts{font-size:32px;font-weight:800;color:#e85d04;margin-bottom:12px;display:none;}
 .modal-text{font-size:14px;color:#666;margin-bottom:20px;line-height:1.5;}
 
-/* ---- CONFETTI ---- */
+/* ===== CONFETTI ===== */
 .cpiece{position:fixed;width:8px;height:14px;border-radius:3px;pointer-events:none;z-index:200;animation:cfall linear forwards;}
 @keyframes cfall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
 
-/* ---- COULEURS MONDES ---- */
+/* ===== COULEURS ===== */
 .c1{background:#1e7e34}.c2{background:#0275d8}.c3{background:#9b59b6}.c4{background:#e67e22}
 .c5{background:#e74c3c}.c6{background:#16a085}.c7{background:#8e44ad}.c8{background:#c0392b}
 .c9{background:#2c3e50}.c10{background:#b7950b}
@@ -174,12 +186,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="nav">
     <button class="nav-btn active" id="nb0" onclick="goNav(0)">🗺 Mondes</button>
-    <button class="nav-btn" id="nb1" onclick="goNav(1)">🏆 Succès</button>
-    <button class="nav-btn" id="nb2" onclick="goNav(2)">📊 Stats</button>
+    <button class="nav-btn"        id="nb1" onclick="goNav(1)">📖 Leçons</button>
+    <button class="nav-btn"        id="nb2" onclick="goNav(2)">🏆 Succès</button>
+    <button class="nav-btn"        id="nb3" onclick="goNav(3)">📊 Stats</button>
   </div>
   <div class="main">
+
+    <!-- MONDE MAP -->
     <div class="screen active" id="s0"><div id="worldsList"></div></div>
+
+    <!-- LEÇONS -->
     <div class="screen" id="s1">
+      <div class="learn-intro">
+        <div class="learn-intro-title">📖 Apprends le Soroban pas à pas</div>
+        <div class="learn-intro-text">10 leçons pour partir de zéro et maîtriser le boulier : lecture, formation, et techniques opératoires. Commence par la Leçon 1 !</div>
+      </div>
+      <div id="lessonsList"></div>
+    </div>
+
+    <!-- LEÇON ACTIVE -->
+    <div class="screen" id="slesson"><div id="lessonArea"></div></div>
+
+    <!-- SUCCÈS -->
+    <div class="screen" id="s2">
       <div class="streak-banner">
         <div style="font-size:44px">🔥</div>
         <div>
@@ -192,7 +221,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="section-title">📋 Missions du Jour</div>
       <div id="missionList"></div>
     </div>
-    <div class="screen" id="s2">
+
+    <!-- STATS -->
+    <div class="screen" id="s3">
       <div class="section-title">📊 Statistiques</div>
       <div class="stats-grid">
         <div class="stat-box"><div class="stat-val" id="stPts">0</div><div class="stat-label">Points</div></div>
@@ -204,9 +235,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div id="worldProg"></div>
       <button class="btn-back" style="margin-top:20px;color:#dc2626;font-size:12px" onclick="resetGame()">⚠️ Réinitialiser la progression</button>
     </div>
+
+    <!-- DÉFI ACTIF -->
     <div class="screen" id="schall"><div id="challArea"></div></div>
+
   </div>
 </div>
+
 <div class="modal" id="modal">
   <div class="modal-box">
     <div class="modal-em" id="mEm">🎉</div>
@@ -216,152 +251,332 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <button class="btn-ok" style="width:100%" onclick="closeModal()">Continuer →</button>
   </div>
 </div>
+
 <script>
-// =============================================================
-//  SOROBAN — CONSTANTES
-// =============================================================
-const BD=34, STEP=38, HH=70, EH=160;
-function hTop(active){return active?32:4;}
-function eTop(idx,count){
-  return idx<count ? 4+idx*STEP : 126-(3-idx)*STEP;
-}
+// ================================================================
+//  CONSTANTES SOROBAN
+// ================================================================
+const BD=36, STEP=40, HH=70, EH=160;
+function hTop(a){return a?30:4;}
+function eTop(i,c){return i<c?4+i*STEP:126-(3-i)*STEP;}
 
-// =============================================================
-//  DONNÉES
-// =============================================================
-// Types de défis :
-//  'form'    → soroban vide, l'enfant FORME le nombre affiché
-//  'read'    → soroban préréglé, l'enfant LIT et tape la réponse (nombre caché)
-//  'calc'    → opération affichée, soroban vide, l'enfant calcule et FORME le résultat
-//  'qcm'     → soroban préréglé, l'enfant choisit parmi 4 boutons (nombre caché)
-//  'speed'   → soroban préréglé + chrono, l'enfant lit vite (nombre caché)
-//  'cspeed'  → opération + chrono, l'enfant calcule et forme vite
-//  'seq'     → série de sorobans préréglés à lire un par un
-//  'fseq'    → série de nombres à former un par un sur le soroban
+// ================================================================
+//  LEÇONS — contenu pédagogique
+// ================================================================
+// Types de steps :
+//   info      — texte + icône, bouton Suivant
+//   demo      — soroban préréglé (interactif) + texte explicatif
+//   try       — soroban vide, l'enfant FORME le nombre cible
+//   try_read  — soroban préréglé (valeur cachée), l'enfant tape le nombre qu'il voit
 
+const LESSONS=[
+{id:'L1',em:'🧮',title:"Le Soroban, c'est quoi ?",sub:"Introduction au boulier japonais",
+ steps:[
+  {type:'info',icon:'🌏',title:"Bienvenue !",
+   text:"Le soroban est un boulier japonais inventé il y a plus de 400 ans. Les champions l'utilisent pour calculer plus vite qu'une calculatrice !"},
+  {type:'info',icon:'🎋',title:"Des tiges et des boules",
+   text:"Le soroban a des tiges verticales. Chaque tige représente une position : à droite les unités, au milieu les dizaines, à gauche les centaines.\n\nLes boules actives sont celles poussées vers la barre du milieu."},
+  {type:'info',icon:'🔴',title:"La boule rouge = 5",
+   text:"Sur chaque tige, il y a 1 boule rouge en haut. Elle vaut 5.\n\nPour l'activer, pousse-la vers le bas (vers la barre centrale)."},
+  {type:'info',icon:'🟠',title:"Les boules oranges = 1 chacune",
+   text:"Sur chaque tige, il y a 4 boules oranges en bas. Chacune vaut 1.\n\nPour les activer, pousse-les vers le haut (vers la barre centrale)."},
+  {type:'demo',title:"Voilà le soroban !",preset:0,
+   text:"Ce soroban montre 0. Toutes les boules sont inactives (éloignées de la barre).",
+   hint:"Essaie de cliquer sur les boules pour les bouger ! La valeur s'affiche en bas."},
+ ]},
+{id:'L2',em:'1️⃣',title:"Nombres 1 à 4",sub:"Utiliser les boules oranges",
+ steps:[
+  {type:'info',icon:'🟠',title:"1 à 4 : que des boules oranges",
+   text:"Pour former les nombres de 1 à 4, on utilise seulement les boules oranges de la tige des unités (à droite).\n\n1 boule = 1,  2 boules = 2,  3 boules = 3,  4 boules = 4."},
+  {type:'demo',title:"Le nombre 1",preset:1,
+   text:"1 boule orange est poussée vers le haut (vers la barre).",
+   hint:"Regarde la tige de droite : 1 boule orange activée = 1."},
+  {type:'demo',title:"Le nombre 3",preset:3,
+   text:"3 boules oranges sont poussées vers la barre centrale.",
+   hint:"Tige de droite : 3 boules activées en haut = 3."},
+  {type:'try',title:"À ton tour !",target:2,
+   text:"Forme le nombre 2 sur la tige de droite."},
+  {type:'try',title:"Encore !",target:4,
+   text:"Forme le nombre 4 — les 4 boules oranges."},
+ ]},
+{id:'L3',em:'5️⃣',title:"Nombres 5 à 9",sub:"Utiliser la boule rouge",
+ steps:[
+  {type:'info',icon:'🔴',title:"La boule rouge vaut 5",
+   text:"Pour faire 5, active la boule rouge en la poussant vers le bas.\n\nPour 6 : rouge (5) + 1 orange (1) = 6\nPour 7 : rouge (5) + 2 oranges (2) = 7\nPour 9 : rouge (5) + 4 oranges (4) = 9"},
+  {type:'demo',title:"Le nombre 5",preset:5,
+   text:"Seule la boule rouge est poussée vers la barre centrale.",
+   hint:"Rouge = 5. Aucune boule orange n'est activée."},
+  {type:'demo',title:"Le nombre 7",preset:7,
+   text:"Rouge (5) + 2 boules oranges (2) = 7",
+   hint:"La boule rouge descend vers la barre + 2 boules oranges montent."},
+  {type:'demo',title:"Le nombre 9",preset:9,
+   text:"Rouge (5) + 4 boules oranges (4) = 9. C'est le maximum sur une tige !",
+   hint:"Boule rouge + les 4 oranges = 5 + 4 = 9."},
+  {type:'try',title:"À ton tour !",target:6,
+   text:"Forme le nombre 6 : rouge + 1 orange."},
+  {type:'try',title:"Encore !",target:8,
+   text:"Forme le nombre 8 : rouge + 3 oranges."},
+ ]},
+{id:'L4',em:'🔟',title:"Les dizaines",sub:"Deuxième tige : ×10",
+ steps:[
+  {type:'info',icon:'📍',title:"Chaque tige × 10",
+   text:"Les tiges fonctionnent comme les chiffres d'un nombre :\n\n• Tige droite  → unités  (×1)\n• Tige milieu  → dizaines (×10)\n• Tige gauche  → centaines (×100)\n\nUne boule orange sur la tige du milieu = 10 !"},
+  {type:'demo',title:"Le nombre 10",preset:10,
+   text:"1 boule orange sur la tige des dizaines (milieu) = 10.",
+   hint:"Tige milieu : 1 boule active. Tige droite : 0. Total = 10."},
+  {type:'demo',title:"Le nombre 23",preset:23,
+   text:"2 dizaines + 3 unités = 23.",
+   hint:"Tige milieu : 2 boules oranges = 20. Tige droite : 3 boules = 3. Total : 23."},
+  {type:'demo',title:"Le nombre 57",preset:57,
+   text:"5 dizaines + 7 unités = 57.",
+   hint:"Tige milieu : boule rouge = 50. Tige droite : rouge+2 oranges = 7. Total : 57."},
+  {type:'try',title:"À ton tour !",target:15,
+   text:"Forme le nombre 15 : 1 dizaine + 5 unités."},
+  {type:'try',title:"Plus difficile !",target:42,
+   text:"Forme le nombre 42 : 4 dizaines + 2 unités."},
+ ]},
+{id:'L5',em:'💯',title:"Les centaines",sub:"Troisième tige : ×100",
+ steps:[
+  {type:'info',icon:'🏛️',title:"La tige des centaines",
+   text:"La tige de gauche représente les centaines. Chaque boule vaut 100 !\n\n1 boule orange à gauche = 100\nBoule rouge à gauche = 500"},
+  {type:'demo',title:"Le nombre 100",preset:100,
+   text:"1 boule orange sur la tige de gauche = 100.",
+   hint:"Tige gauche : 1 boule orange. Tiges milieu et droite : 0. Total : 100."},
+  {type:'demo',title:"Le nombre 245",preset:245,
+   text:"2 centaines + 4 dizaines + 5 unités = 245.",
+   hint:"Gauche:2 oranges=200, Milieu:4 oranges=40, Droite:rouge=5. Total:245."},
+  {type:'demo',title:"Le nombre 376",preset:376,
+   text:"3 centaines + 7 dizaines + 6 unités = 376.",
+   hint:"Gauche:3=300, Milieu:rouge+2=70, Droite:rouge+1=6. Total:376."},
+  {type:'try',title:"À ton tour !",target:130,
+   text:"Forme le nombre 130 : 1 centaine + 3 dizaines."},
+  {type:'try',title:"Bravo !",target:307,
+   text:"Forme le nombre 307 : 3 centaines + 0 dizaines + 7 unités."},
+ ]},
+{id:'L6',em:'👁',title:"Lire le Soroban",sub:"Décoder ce que montrent les boules",
+ steps:[
+  {type:'info',icon:'🔍',title:"Comment lire ?",
+   text:"Pour lire le soroban :\n\n1. Regarde chaque tige de gauche à droite\n2. Compte : rouge = 5, chaque orange = 1\n3. Multiplie par la valeur de la tige (×100, ×10, ×1)\n4. Additionne tout !"},
+  {type:'demo',title:"Lire 64",preset:64,
+   text:"Tige milieu : rouge (5×10=50) + 1 orange (1×10=10) = 60.\nTige droite : 4 oranges = 4. Total : 64.",
+   hint:"Lis tige par tige de gauche à droite. Ici : 60 + 4 = 64."},
+  {type:'demo',title:"Lire 125",preset:125,
+   text:"Tige gauche : 1 orange = 100.\nTige milieu : 2 oranges = 20.\nTige droite : rouge = 5. Total : 125.",
+   hint:"100 + 20 + 5 = 125."},
+  {type:'try_read',title:"Lis ce soroban !",preset:38,
+   text:"Quel nombre est formé ? Regarde tige par tige."},
+  {type:'try_read',title:"Et celui-là ?",preset:174,
+   text:"Quel nombre est formé ? Centaines + dizaines + unités."},
+  {type:'try_read',title:"Dernier !",preset:509,
+   text:"Quel nombre vois-tu ? Attention aux tiges à zéro !"},
+ ]},
+// ---- LEÇONS OPÉRATOIRES ----
+{id:'L7',em:'➕',title:"Addition Directe",sub:"Ajouter en déplaçant des boules",
+ steps:[
+  {type:'info',icon:'➕',title:"Additionner sur le soroban",
+   text:"Pour additionner, on part du premier nombre sur le soroban, puis on AJOUTE des boules pour arriver au résultat.\n\nDans les cas simples, on pousse des boules oranges vers le haut.\n\nCommençons !"},
+  {type:'demo',title:"Départ : 2",preset:2,
+   text:"Le soroban montre 2. Pour calculer 2+1, on ajoute 1 boule orange supplémentaire.",
+   hint:"Pousse 1 boule orange vers la barre. 2 → 3."},
+  {type:'operation',title:"Calcule 2 + 1",start:2,op:'+',operand:1,result:3,
+   text:"Le soroban part de 2. Ajoute 1 boule orange.",
+   hint:"Pousse 1 boule orange vers le haut. Résultat : 3."},
+  {type:'operation',title:"Calcule 1 + 3",start:1,op:'+',operand:3,result:4,
+   text:"Le soroban part de 1. Ajoute 3 boules oranges.",
+   hint:"Pousse 3 boules oranges vers la barre. 1+3=4."},
+  {type:'operation',title:"Calcule 10 + 3",start:10,op:'+',operand:3,result:13,
+   text:"Le soroban part de 10. Ajoute 3 à la tige des unités (à droite).",
+   hint:"Seule la tige droite change : +3 oranges. Résultat : 13."},
+  {type:'operation',title:"Calcule 21 + 3",start:21,op:'+',operand:3,result:24,
+   text:"Le soroban part de 21. Ajoute 3 à la tige des unités.",
+   hint:"La tige des dizaines ne bouge pas. +3 oranges sur la tige droite. Résultat : 24."},
+ ]},
+{id:'L8',em:'🔄',title:"Complément à 5",sub:"Quand les oranges ne suffisent plus",
+ steps:[
+  {type:'info',icon:'💡',title:"Le secret du Soroban",
+   text:"Parfois les boules oranges sont pleines et on ne peut plus en ajouter directement.\n\nLa technique du complément à 5 :\n1️⃣ Active la boule rouge (+5)\n2️⃣ Enlève (5 − n) boules oranges\n\nExemple : ajouter 3\n→ +rouge (+5), −2 oranges (5−3=2)\n→ Net : +5−2 = +3 ✓"},
+  {type:'info',icon:'🧮',title:"Pourquoi ça marche ?",
+   text:"Additionner 5 et enlever 2 revient à ajouter 3.\n\n+5 − 2 = +3\n\nLe soroban calcule 5−2=3 tout seul.\n\nFormule magique :\nComplémentaire de n à 5 = (5 − n)\n\n• Ajouter 4 → +rouge, −1 orange (5−4=1)\n• Ajouter 3 → +rouge, −2 oranges (5−3=2)\n• Ajouter 2 → +rouge, −3 oranges (5−2=3)"},
+  {type:'demo',title:"Exemple : 3 + 3 = 6",preset:3,
+   text:"Le soroban montre 3. Pour ajouter 3, il ne reste qu'1 place orange. On utilise la technique :\n\n+rouge (+5), −2 oranges (5−3=2)\n\nRésultat : rouge + 1 orange = 6.",
+   hint:"3+3=6. Active la rouge et enlève 2 oranges. Rouge(5)+1=6 ✓"},
+  {type:'operation',title:"Calcule 2 + 4",start:2,op:'+',operand:4,result:6,
+   text:"2+4=6. Pas assez de place pour 4 oranges à partir de 2. Utilise le complément à 5 !",
+   hint:"Active la rouge (+5), enlève 1 orange (5−4=1). 2+5−1=6 ✓"},
+  {type:'operation',title:"Calcule 4 + 2",start:4,op:'+',operand:2,result:6,
+   text:"4+2=6. Les 4 oranges sont actives, plus de place ! Technique du complément.",
+   hint:"Active la rouge (+5), enlève 3 oranges (5−2=3). 4+5−3=6 ✓"},
+  {type:'operation',title:"Calcule 3 + 4",start:3,op:'+',operand:4,result:7,
+   text:"3+4=7. À toi d'appliquer la technique !",
+   hint:"Active la rouge (+5), enlève 1 orange (5−4=1). 3+5−1=7 ✓"},
+ ]},
+{id:'L9',em:'🔟',title:"La Retenue — Complément à 10",sub:"Passer à la dizaine suivante",
+ steps:[
+  {type:'info',icon:'🚀',title:"Quand le résultat dépasse 9",
+   text:"Quand la somme dépasse 9 sur la tige des unités, on doit faire une RETENUE vers les dizaines.\n\nLa technique du complément à 10 :\n1️⃣ Ajoute 1 à la tige des dizaines (+10)\n2️⃣ Enlève (10 − n) à la tige des unités\n\nExemple : ajouter 6 à 7\n→ +1 dizaine (+10), −4 unités (10−6=4)\n→ Net : +10−4 = +6 ✓"},
+  {type:'info',icon:'🧮',title:"La table des compléments à 10",
+   text:"Complémentaire de n à 10 = (10 − n)\n\n• Ajouter 9 → +1 dizaine, −1 unité\n• Ajouter 8 → +1 dizaine, −2 unités\n• Ajouter 7 → +1 dizaine, −3 unités\n• Ajouter 6 → +1 dizaine, −4 unités\n• Ajouter 5 → +1 dizaine, −5 unités\n• Ajouter 4 → +1 dizaine, −6 unités"},
+  {type:'demo',title:"Exemple : 7 + 5 = 12",preset:7,
+   text:"Le soroban montre 7. 7+5=12 dépasse 9 !\n\nTechnique : +1 dizaine (tige milieu), −5 unités (10−5=5).\n7−5=2 unités. Résultat : 1 dizaine + 2 unités = 12.",
+   hint:"+1 dizaine (tige milieu) et −5 oranges (tige droite). Résultat : 12."},
+  {type:'operation',title:"Calcule 8 + 4",start:8,op:'+',operand:4,result:12,
+   text:"8+4=12, dépasse 9 ! Utilise la retenue.",
+   hint:"+1 dizaine (tige milieu), −6 unités (10−4=6). 8−6=2 unités. Total : 12 ✓"},
+  {type:'operation',title:"Calcule 6 + 7",start:6,op:'+',operand:7,result:13,
+   text:"6+7=13, dépasse 9 ! À toi !",
+   hint:"+1 dizaine, −3 unités (10−7=3). 6−3=3 unités. Total : 13 ✓"},
+  {type:'operation',title:"Calcule 9 + 5",start:9,op:'+',operand:5,result:14,
+   text:"9+5=14, dépasse 9 ! Applique la retenue.",
+   hint:"+1 dizaine, −5 unités (10−5=5). 9−5=4 unités. Total : 14 ✓"},
+ ]},
+{id:'L10',em:'➖',title:"Soustraction Directe",sub:"Enlever des boules pas à pas",
+ steps:[
+  {type:'info',icon:'➖',title:"Soustraire sur le soroban",
+   text:"Pour soustraire, on part du premier nombre et on ENLÈVE des boules vers le bas.\n\nOn peut soustraire directement quand les boules à enlever sont déjà actives.\n\nExemple : 4−2 → on désactive 2 boules oranges."},
+  {type:'demo',title:"Exemple : 9 − 4",preset:9,
+   text:"Le soroban montre 9 (rouge + 4 oranges). Pour soustraire 4 : on enlève les 4 boules oranges. Il reste la rouge = 5.",
+   hint:"Désactive les 4 oranges vers le bas. Rouge seule = 5. 9−4=5 ✓"},
+  {type:'operation',title:"Calcule 4 − 2",start:4,op:'−',operand:2,result:2,
+   text:"Le soroban part de 4. Enlève 2 boules oranges.",
+   hint:"Pousse 2 boules oranges vers le bas. 4−2=2."},
+  {type:'operation',title:"Calcule 9 − 4",start:9,op:'−',operand:4,result:5,
+   text:"Le soroban part de 9 (rouge+4 oranges). Enlève 4 oranges.",
+   hint:"Désactive les 4 oranges. Il reste la rouge = 5. 9−4=5 ✓"},
+  {type:'operation',title:"Calcule 8 − 3",start:8,op:'−',operand:3,result:5,
+   text:"Le soroban part de 8 (rouge+3 oranges). Enlève 3 oranges.",
+   hint:"Désactive les 3 oranges. Rouge seule = 5. 8−3=5 ✓"},
+  {type:'operation',title:"Calcule 15 − 3",start:15,op:'−',operand:3,result:12,
+   text:"Le soroban part de 15. Enlève 3 à la tige des unités (droite).",
+   hint:"Seule la tige droite change. Enlève 3 oranges de la tige des unités. 15−3=12 ✓"},
+ ]},
+];
+
+// ================================================================
+//  DONNÉES JEUX — 10 mondes, 60 défis
+// ================================================================
 const WORLDS=[
-{id:1,name:"Île des Œufs",em:"🥚",ci:1,desc:"Lecture & formation — nombres 1 à 9",unlock:0,ch:[
-  {id:"1-1",type:"form", n:3,   label:"Forme le nombre 3",            pts:10},
-  {id:"1-2",type:"read", n:7,   label:"Quel nombre vois-tu ?",        pts:10},
-  {id:"1-3",type:"form", n:5,   label:"Forme le nombre 5 (rouge !)",  pts:10},
-  {id:"1-4",type:"read", n:2,   label:"Quel nombre vois-tu ?",        pts:10},
-  {id:"1-5",type:"form", n:9,   label:"Forme le nombre 9",            pts:12},
-  {id:"1-6",type:"qcm",  n:4,   label:"Quel est ce nombre ?",         pts:15},
+{id:1,name:"Île des Œufs",em:"🥚",ci:1,desc:"Lecture & formation — 1 à 9",unlock:0,ch:[
+  {id:"1-1",type:"form", n:3,   label:"Forme le nombre 3",           pts:10},
+  {id:"1-2",type:"read", n:7,   label:"Quel nombre vois-tu ?",       pts:10},
+  {id:"1-3",type:"form", n:5,   label:"Forme le nombre 5",           pts:10},
+  {id:"1-4",type:"read", n:2,   label:"Quel nombre vois-tu ?",       pts:10},
+  {id:"1-5",type:"form", n:9,   label:"Forme le nombre 9",           pts:12},
+  {id:"1-6",type:"qcm",  n:4,   label:"Quel est ce nombre ?",        pts:15},
 ]},
 {id:2,name:"Forêt du T-Rex",em:"🦖",ci:2,desc:"Dizaines — 10 à 50",unlock:4,ch:[
-  {id:"2-1",type:"form", n:12,  label:"Forme le nombre 12",           pts:15},
-  {id:"2-2",type:"read", n:25,  label:"Quel nombre vois-tu ?",        pts:15},
-  {id:"2-3",type:"form", n:33,  label:"Forme le nombre 33",           pts:15},
-  {id:"2-4",type:"qcm",  n:17,  label:"Quel est ce nombre ?",         pts:18},
-  {id:"2-5",type:"read", n:49,  label:"Quel nombre vois-tu ?",        pts:15},
-  {id:"2-6",type:"speed",n:38,  label:"⚡ Lis vite !",time:20,        pts:22},
+  {id:"2-1",type:"form", n:12,  label:"Forme le nombre 12",          pts:15},
+  {id:"2-2",type:"read", n:25,  label:"Quel nombre vois-tu ?",       pts:15},
+  {id:"2-3",type:"form", n:33,  label:"Forme le nombre 33",          pts:15},
+  {id:"2-4",type:"qcm",  n:17,  label:"Quel est ce nombre ?",        pts:18},
+  {id:"2-5",type:"read", n:49,  label:"Quel nombre vois-tu ?",       pts:15},
+  {id:"2-6",type:"speed",n:38,  label:"⚡ Lis vite !",time:20,       pts:22},
 ]},
 {id:3,name:"Marécage Stégosaure",em:"🦕",ci:3,desc:"Dizaines avancées — 50 à 99",unlock:8,ch:[
-  {id:"3-1",type:"form", n:53,  label:"Forme le nombre 53",           pts:18},
-  {id:"3-2",type:"read", n:67,  label:"Quel nombre vois-tu ?",        pts:18},
-  {id:"3-3",type:"qcm",  n:73,  label:"Quel est ce nombre ?",         pts:22},
-  {id:"3-4",type:"form", n:81,  label:"Forme le nombre 81",           pts:18},
-  {id:"3-5",type:"speed",n:96,  label:"⚡ Lis vite !",time:15,        pts:25},
-  {id:"3-6",type:"seq",  seq:[55,60,65],label:"Lis la séquence",      pts:30},
+  {id:"3-1",type:"form", n:53,  label:"Forme le nombre 53",          pts:18},
+  {id:"3-2",type:"read", n:67,  label:"Quel nombre vois-tu ?",       pts:18},
+  {id:"3-3",type:"qcm",  n:73,  label:"Quel est ce nombre ?",        pts:22},
+  {id:"3-4",type:"form", n:81,  label:"Forme le nombre 81",          pts:18},
+  {id:"3-5",type:"speed",n:96,  label:"⚡ Lis vite !",time:15,       pts:25},
+  {id:"3-6",type:"seq",  seq:[55,60,65],label:"Lis la séquence",     pts:30},
 ]},
 {id:4,name:"Volcan Ptéranodon",em:"🦅",ci:4,desc:"Centaines — 100 à 500",unlock:14,ch:[
-  {id:"4-1",type:"form", n:123, label:"Forme le nombre 123",          pts:22},
-  {id:"4-2",type:"read", n:250, label:"Quel nombre vois-tu ?",        pts:22},
-  {id:"4-3",type:"qcm",  n:316, label:"Quel est ce nombre ?",         pts:28},
-  {id:"4-4",type:"form", n:404, label:"Forme le nombre 404",          pts:22},
-  {id:"4-5",type:"speed",n:289, label:"⚡ Lis vite !",time:15,        pts:30},
-  {id:"4-6",type:"fseq", seq:[100,200,300],label:"Forme la séquence", pts:38},
+  {id:"4-1",type:"form", n:123, label:"Forme le nombre 123",         pts:22},
+  {id:"4-2",type:"read", n:250, label:"Quel nombre vois-tu ?",       pts:22},
+  {id:"4-3",type:"qcm",  n:316, label:"Quel est ce nombre ?",        pts:28},
+  {id:"4-4",type:"form", n:404, label:"Forme le nombre 404",         pts:22},
+  {id:"4-5",type:"speed",n:289, label:"⚡ Lis vite !",time:15,       pts:30},
+  {id:"4-6",type:"fseq", seq:[100,200,300],label:"Forme la séquence",pts:38},
 ]},
 {id:5,name:"Grotte Ankylosaure",em:"🛡️",ci:5,desc:"Addition simple — sommes ≤ 20",unlock:20,ch:[
-  {id:"5-1",type:"calc", a:3,b:4,op:"+",n:7,   label:"Calcule 3 + 4",    pts:25},
-  {id:"5-2",type:"calc", a:6,b:7,op:"+",n:13,  label:"Calcule 6 + 7",    pts:25},
-  {id:"5-3",type:"calc", a:5,b:8,op:"+",n:13,  label:"Calcule 5 + 8",    pts:25},
-  {id:"5-4",type:"calc", a:4,b:5,op:"+",n:9,   label:"Calcule 4 + 5",    pts:25},
-  {id:"5-5",type:"qcm",  n:15,               label:"7 + 8 = ?",          pts:28},
-  {id:"5-6",type:"cspeed",a:9,b:9,op:"+",n:18, label:"⚡ 9 + 9",time:15, pts:35},
+  {id:"5-1",type:"calc", a:3,b:4,op:"+",n:7,   label:"Calcule 3 + 4",   pts:25},
+  {id:"5-2",type:"calc", a:6,b:7,op:"+",n:13,  label:"Calcule 6 + 7",   pts:25},
+  {id:"5-3",type:"calc", a:5,b:8,op:"+",n:13,  label:"Calcule 5 + 8",   pts:25},
+  {id:"5-4",type:"calc", a:4,b:5,op:"+",n:9,   label:"Calcule 4 + 5",   pts:25},
+  {id:"5-5",type:"qcm",  n:15,              label:"7 + 8 = ?",           pts:28},
+  {id:"5-6",type:"cspeed",a:9,b:9,op:"+",n:18, label:"⚡ 9 + 9",time:15,pts:35},
 ]},
 {id:6,name:"Lac Diplodocus",em:"🌊",ci:6,desc:"Soustraction — résultat ≥ 0",unlock:26,ch:[
-  {id:"6-1",type:"calc", a:9, b:3,op:"−",n:6,  label:"Calcule 9 − 3",    pts:28},
-  {id:"6-2",type:"calc", a:15,b:7,op:"−",n:8,  label:"Calcule 15 − 7",   pts:28},
-  {id:"6-3",type:"calc", a:12,b:5,op:"−",n:7,  label:"Calcule 12 − 5",   pts:28},
-  {id:"6-4",type:"qcm",  n:9,               label:"18 − 9 = ?",          pts:35},
-  {id:"6-5",type:"calc", a:14,b:6,op:"−",n:8,  label:"Calcule 14 − 6",   pts:28},
-  {id:"6-6",type:"seq",  seq:[18,15,12],label:"Lis la suite (−3)",        pts:38},
+  {id:"6-1",type:"calc", a:9, b:3,op:"−",n:6,  label:"Calcule 9 − 3",   pts:28},
+  {id:"6-2",type:"calc", a:15,b:7,op:"−",n:8,  label:"Calcule 15 − 7",  pts:28},
+  {id:"6-3",type:"calc", a:12,b:5,op:"−",n:7,  label:"Calcule 12 − 5",  pts:28},
+  {id:"6-4",type:"qcm",  n:9,               label:"18 − 9 = ?",         pts:35},
+  {id:"6-5",type:"calc", a:14,b:6,op:"−",n:8,  label:"Calcule 14 − 6",  pts:28},
+  {id:"6-6",type:"seq",  seq:[18,15,12],label:"Lis la suite (−3)",       pts:38},
 ]},
 {id:7,name:"Prairie Brachiosaure",em:"🌿",ci:7,desc:"Grands nombres — 500 à 9999",unlock:32,ch:[
-  {id:"7-1",type:"form", n:512,  label:"Forme le nombre 512",         pts:32},
-  {id:"7-2",type:"read", n:1234, label:"Quel nombre vois-tu ?",       pts:35},
-  {id:"7-3",type:"qcm",  n:2538, label:"Quel est ce nombre ?",        pts:40},
-  {id:"7-4",type:"form", n:3709, label:"Forme le nombre 3709",        pts:35},
-  {id:"7-5",type:"speed",n:8765, label:"⚡ Lis vite !",time:20,       pts:45},
-  {id:"7-6",type:"fseq", seq:[1000,2000,3000],label:"Forme la séquence",pts:50},
+  {id:"7-1",type:"form", n:512,  label:"Forme le nombre 512",        pts:32},
+  {id:"7-2",type:"read", n:1234, label:"Quel nombre vois-tu ?",      pts:35},
+  {id:"7-3",type:"qcm",  n:2538, label:"Quel est ce nombre ?",       pts:40},
+  {id:"7-4",type:"form", n:3709, label:"Forme le nombre 3709",       pts:35},
+  {id:"7-5",type:"speed",n:8765, label:"⚡ Lis vite !",time:20,      pts:45},
+  {id:"7-6",type:"fseq", seq:[1000,2000,3000],label:"Forme 1k, 2k, 3k",pts:50},
 ]},
-{id:8,name:"Montagne Vélociraptor",em:"⚡",ci:8,desc:"Addition & soustraction ≤ 100",unlock:38,ch:[
-  {id:"8-1",type:"calc", a:23,b:14,op:"+",n:37, label:"Calcule 23 + 14",  pts:38},
-  {id:"8-2",type:"calc", a:45,b:18,op:"−",n:27, label:"Calcule 45 − 18",  pts:38},
-  {id:"8-3",type:"calc", a:56,b:27,op:"+",n:83, label:"Calcule 56 + 27",  pts:38},
+{id:8,name:"Montagne Vélociraptor",em:"⚡",ci:8,desc:"Addition & Soustraction ≤ 100",unlock:38,ch:[
+  {id:"8-1",type:"calc", a:23,b:14,op:"+",n:37, label:"Calcule 23 + 14", pts:38},
+  {id:"8-2",type:"calc", a:45,b:18,op:"−",n:27, label:"Calcule 45 − 18", pts:38},
+  {id:"8-3",type:"calc", a:56,b:27,op:"+",n:83, label:"Calcule 56 + 27", pts:38},
   {id:"8-4",type:"cspeed",a:72,b:35,op:"−",n:37,label:"⚡ 72 − 35",time:12,pts:48},
-  {id:"8-5",type:"calc", a:63,b:29,op:"+",n:92, label:"Calcule 63 + 29",  pts:42},
-  {id:"8-6",type:"qcm",  n:92,               label:"68 + 24 = ?",         pts:55},
+  {id:"8-5",type:"calc", a:63,b:29,op:"+",n:92, label:"Calcule 63 + 29", pts:42},
+  {id:"8-6",type:"qcm",  n:92,              label:"68 + 24 = ?",         pts:55},
 ]},
 {id:9,name:"Cité Tricératops",em:"🏛️",ci:9,desc:"Multiplication — ×2, ×3, ×5, ×10",unlock:44,ch:[
-  {id:"9-1",type:"calc", a:6,b:2,op:"×",n:12, label:"Calcule 6 × 2",   pts:42},
-  {id:"9-2",type:"calc", a:4,b:5,op:"×",n:20, label:"Calcule 4 × 5",   pts:42},
-  {id:"9-3",type:"calc", a:7,b:3,op:"×",n:21, label:"Calcule 7 × 3",   pts:42},
-  {id:"9-4",type:"qcm",  n:40,             label:"8 × 5 = ?",           pts:50},
-  {id:"9-5",type:"cspeed",a:9,b:2,op:"×",n:18,label:"⚡ 9 × 2",time:10,pts:55},
+  {id:"9-1",type:"calc", a:6,b:2,op:"×",n:12,  label:"Calcule 6 × 2",  pts:42},
+  {id:"9-2",type:"calc", a:4,b:5,op:"×",n:20,  label:"Calcule 4 × 5",  pts:42},
+  {id:"9-3",type:"calc", a:7,b:3,op:"×",n:21,  label:"Calcule 7 × 3",  pts:42},
+  {id:"9-4",type:"qcm",  n:40,              label:"8 × 5 = ?",          pts:50},
+  {id:"9-5",type:"cspeed",a:9,b:2,op:"×",n:18, label:"⚡ 9 × 2",time:10,pts:55},
   {id:"9-6",type:"fseq", seq:[3,6,9,12,15],label:"Table de 3 !",        pts:65},
 ]},
-{id:10,name:"Temple Grand Maître",em:"🌋",ci:10,desc:"Défis ultimes — Maître du Soroban !",unlock:50,ch:[
-  {id:"10-1",type:"form", n:12345,label:"Forme le nombre 12 345",     pts:60},
+{id:10,name:"Temple Grand Maître",em:"🌋",ci:10,desc:"Défis ultimes !",unlock:50,ch:[
+  {id:"10-1",type:"form", n:12345,label:"Forme 12 345",               pts:60},
   {id:"10-2",type:"calc", a:125,b:237,op:"+",n:362,label:"125 + 237", pts:65},
   {id:"10-3",type:"calc", a:500,b:186,op:"−",n:314,label:"500 − 186", pts:65},
   {id:"10-4",type:"speed",n:99999,label:"⚡ Lis vite !",time:20,       pts:70},
-  {id:"10-5",type:"calc", a:24,b:3,op:"×",n:72,label:"24 × 3",       pts:70},
-  {id:"10-6",type:"qcm",  n:65,             label:"13 × 5 = ?",        pts:80},
+  {id:"10-5",type:"calc", a:24,b:3,op:"×",n:72,label:"24 × 3",        pts:70},
+  {id:"10-6",type:"qcm",  n:65,              label:"13 × 5 = ?",       pts:80},
 ]},
 ];
 
 const BADGES=[
-  {id:"b1", em:"🥚",  name:"Bébé Dino",     cond:s=>s.done>=1,       hint:"1er défi réussi"},
-  {id:"b2", em:"🦖",  name:"Chasseur",       cond:s=>s.done>=6,       hint:"6 défis"},
-  {id:"b3", em:"🦅",  name:"Ptéranodon",     cond:s=>s.done>=12,      hint:"12 défis"},
-  {id:"b4", em:"🦕",  name:"Stégosaure",     cond:s=>s.done>=20,      hint:"20 défis"},
-  {id:"b5", em:"🛡️", name:"Ankylosaure",    cond:s=>s.done>=30,      hint:"30 défis"},
-  {id:"b6", em:"🌊",  name:"Diplodocus",     cond:s=>s.done>=40,      hint:"40 défis"},
-  {id:"b7", em:"⚡",  name:"Vélociraptor",   cond:s=>s.done>=50,      hint:"50 défis"},
-  {id:"b8", em:"👑",  name:"Grand Maître",   cond:s=>s.done>=58,      hint:"Tous les défis !"},
-  {id:"b9", em:"🔥",  name:"Flamme 3j",      cond:s=>s.streak>=3,     hint:"3 jours de suite"},
-  {id:"b10",em:"📅",  name:"Une semaine",     cond:s=>s.streak>=7,     hint:"7 jours de suite"},
-  {id:"b11",em:"🌟",  name:"Deux semaines",   cond:s=>s.bestStreak>=14,hint:"14 jours streak"},
-  {id:"b12",em:"🧮",  name:"Calculateur",     cond:s=>s.points>=500,   hint:"500 points"},
-  {id:"b13",em:"🏆",  name:"Champion",        cond:s=>s.points>=1000,  hint:"1000 points"},
-  {id:"b14",em:"💎",  name:"Diamant",         cond:s=>s.points>=2000,  hint:"2000 points"},
-  {id:"b15",em:"🦴",  name:"Maître Dino",     cond:s=>s.done>=60,      hint:"60/60 défis !"},
+  {id:"b1", em:"🥚",  name:"Bébé Dino",    cond:s=>s.done>=1,       hint:"1er défi"},
+  {id:"b2", em:"🦖",  name:"Chasseur",      cond:s=>s.done>=6,       hint:"6 défis"},
+  {id:"b3", em:"🦅",  name:"Ptéranodon",    cond:s=>s.done>=12,      hint:"12 défis"},
+  {id:"b4", em:"🦕",  name:"Stégosaure",    cond:s=>s.done>=20,      hint:"20 défis"},
+  {id:"b5", em:"🛡️", name:"Ankylosaure",   cond:s=>s.done>=30,      hint:"30 défis"},
+  {id:"b6", em:"🌊",  name:"Diplodocus",    cond:s=>s.done>=40,      hint:"40 défis"},
+  {id:"b7", em:"⚡",  name:"Vélociraptor",  cond:s=>s.done>=50,      hint:"50 défis"},
+  {id:"b8", em:"👑",  name:"Grand Maître",  cond:s=>s.done>=58,      hint:"Tous les défis !"},
+  {id:"b9", em:"📖",  name:"Élève Sérieux", cond:s=>s.lessonsOk>=3,  hint:"3 leçons terminées"},
+  {id:"b10",em:"🎓",  name:"Diplômé",       cond:s=>s.lessonsOk>=10, hint:"10 leçons terminées !"},
+  {id:"b11",em:"🔥",  name:"Flamme 3j",     cond:s=>s.streak>=3,     hint:"3 jours de suite"},
+  {id:"b12",em:"📅",  name:"Une semaine",   cond:s=>s.streak>=7,     hint:"7 jours de suite"},
+  {id:"b13",em:"🧮",  name:"Calculateur",   cond:s=>s.points>=500,   hint:"500 points"},
+  {id:"b14",em:"🏆",  name:"Champion",      cond:s=>s.points>=1000,  hint:"1000 points"},
+  {id:"b15",em:"🦴",  name:"Maître Dino",   cond:s=>s.done>=60,      hint:"60/60 défis !"},
 ];
 
 const MISSIONS=[
-  {text:"Compléter 2 défis aujourd'hui",       xp:30,  check:d=>d.today>=2},
-  {text:"Compléter 5 défis aujourd'hui",       xp:80,  check:d=>d.today>=5},
-  {text:"Réussir un défi sans erreur",         xp:50,  check:d=>d.perfect>=1},
-  {text:"Réussir un défi Vitesse",             xp:50,  check:d=>d.speed>=1},
-  {text:"Marquer 100 pts en une session",      xp:60,  check:d=>d.sessPoints>=100},
+  {text:"Compléter 2 défis aujourd'hui",   xp:30,  check:d=>d.today>=2},
+  {text:"Compléter 5 défis aujourd'hui",   xp:80,  check:d=>d.today>=5},
+  {text:"Réussir un défi sans erreur",     xp:50,  check:d=>d.perfect>=1},
+  {text:"Réussir un défi Vitesse",         xp:50,  check:d=>d.speed>=1},
+  {text:"Marquer 100 pts en une session",  xp:60,  check:d=>d.sessPoints>=100},
 ];
 
-// =============================================================
+// ================================================================
 //  ÉTAT
-// =============================================================
+// ================================================================
 let S=load();
-let ACT=null;
+let ACT=null;       // défi actif
+let LSN=null;       // leçon active {lesson, stepIdx}
 let soroban=[];
 let timerID=null;
 let sd={today:0,perfect:0,speed:0,sessPoints:0};
 
-function defaults(){return{points:0,streak:0,bestStreak:0,lastDate:'',done:0,comp:{},badges:{}};}
-function load(){try{return Object.assign(defaults(),JSON.parse(localStorage.getItem('sdv3')||'{}'));}catch(e){return defaults();}}
-function save(){localStorage.setItem('sdv3',JSON.stringify(S));}
+function defaults(){return{points:0,streak:0,bestStreak:0,lastDate:'',done:0,comp:{},badges:{},lessonsComp:{},lessonsOk:0};}
+function load(){try{return Object.assign(defaults(),JSON.parse(localStorage.getItem('sdv4')||'{}'));}catch(e){return defaults();}}
+function save(){localStorage.setItem('sdv4',JSON.stringify(S));}
 
-// Streak au démarrage
 (function(){
   const today=new Date().toISOString().slice(0,10);
   if(S.lastDate!==today){
@@ -372,10 +587,13 @@ function save(){localStorage.setItem('sdv3',JSON.stringify(S));}
   }
 })();
 
-// =============================================================
-//  SOROBAN MOTEUR
-// =============================================================
-function numRods(n){return Math.max(2,String(Math.abs(Math.floor(n||0))).length);}
+// ================================================================
+//  SOROBAN — MOTEUR
+// ================================================================
+function numRods(n){
+  // Toujours au moins 3 colonnes (centaines, dizaines, unités)
+  return Math.max(3,String(Math.abs(Math.floor(n||0))).length);
+}
 
 function initSoroban(preset){
   const nc=numRods(preset!=null?preset:0);
@@ -393,23 +611,12 @@ function initSoroban(preset){
 
 function getSorobanVal(){
   let v=0;
-  soroban.forEach((r,i)=>{
-    const p=Math.pow(10,soroban.length-1-i);
-    v+=(r.heaven?5:0)*p+r.earth*p;
-  });
+  soroban.forEach((r,i)=>{const p=Math.pow(10,soroban.length-1-i);v+=(r.heaven?5:0)*p+r.earth*p;});
   return v;
 }
 
-function clickHeaven(ri){
-  soroban[ri].heaven=!soroban[ri].heaven;
-  updateRodDOM(ri);beadSnd();updateValDisplay();
-}
-
-function clickEarth(ri,bi){
-  const cur=soroban[ri].earth;
-  soroban[ri].earth=(bi<cur)?bi:bi+1;
-  updateRodDOM(ri);beadSnd();updateValDisplay();
-}
+function clickHeaven(ri){soroban[ri].heaven=!soroban[ri].heaven;updateRodDOM(ri);beadSnd();updateValDisplay();}
+function clickEarth(ri,bi){const c=soroban[ri].earth;soroban[ri].earth=(bi<c)?bi:bi+1;updateRodDOM(ri);beadSnd();updateValDisplay();}
 
 function updateRodDOM(ri){
   const rod=soroban[ri];
@@ -417,10 +624,7 @@ function updateRodDOM(ri){
   if(!rEl)return;
   const hEl=rEl.querySelector('.bead-h');
   if(hEl){hEl.style.top=hTop(rod.heaven)+'px';hEl.classList.toggle('active',rod.heaven);}
-  rEl.querySelectorAll('.bead-e').forEach((el,bi)=>{
-    el.style.top=eTop(bi,rod.earth)+'px';
-    el.classList.toggle('active',bi<rod.earth);
-  });
+  rEl.querySelectorAll('.bead-e').forEach((el,bi)=>{el.style.top=eTop(bi,rod.earth)+'px';el.classList.toggle('active',bi<rod.earth);});
 }
 
 function updateValDisplay(){
@@ -429,7 +633,7 @@ function updateValDisplay(){
   el.textContent=(ACT&&ACT.hideVal)?'?':getSorobanVal();
 }
 
-function buildSorobanHTML(preset,hideVal){
+function buildSorobanHTML(preset,hideVal,demoMode){
   initSoroban(preset);
   const nc=soroban.length;
   const PLACES=['10⁴','10³','10²','10¹','10⁰'];
@@ -437,16 +641,17 @@ function buildSorobanHTML(preset,hideVal){
   let rods='';
   for(let i=0;i<nc;i++){
     const r=soroban[i];
+    const click=demoMode?'':'onclick';
     let eBeads='';
     for(let bi=0;bi<4;bi++){
       const top=eTop(bi,r.earth);
-      eBeads+=`<div class="bead-e${bi<r.earth?' active':''}" style="top:${top}px" onclick="clickEarth(${i},${bi})"></div>`;
+      eBeads+=`<div class="bead-e${bi<r.earth?' active':''}" style="top:${top}px" ${click}="clickEarth(${i},${bi})"></div>`;
     }
     rods+=`<div class="rod-wrap">
       <div class="rod-col" data-ri="${i}">
         <div class="rod-stick"></div>
         <div class="heaven-zone">
-          <div class="bead-h${r.heaven?' active':''}" style="top:${hTop(r.heaven)}px" onclick="clickHeaven(${i})"></div>
+          <div class="bead-h${r.heaven?' active':''}" style="top:${hTop(r.heaven)}px" ${click}="clickHeaven(${i})"></div>
         </div>
         <div class="rod-divider"></div>
         <div class="earth-zone">${eBeads}</div>
@@ -454,7 +659,7 @@ function buildSorobanHTML(preset,hideVal){
       <div class="rod-label">${PLACES[start+i]}</div>
     </div>`;
   }
-  return `<div class="soroban-outer">
+  return `<div class="soroban-outer${demoMode?' demo-mode':''}">
     <div class="soroban-bar"></div>
     <div class="soroban-rods">${rods}</div>
     <div class="soroban-bar"></div>
@@ -462,17 +667,18 @@ function buildSorobanHTML(preset,hideVal){
   </div>`;
 }
 
-// =============================================================
+// ================================================================
 //  NAVIGATION
-// =============================================================
+// ================================================================
 function goNav(n){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('s'+n).classList.add('active');
   document.getElementById('nb'+n).classList.add('active');
   if(n===0)renderMap();
-  if(n===1)renderRewards();
-  if(n===2)renderStats();
+  if(n===1)renderLessons();
+  if(n===2)renderRewards();
+  if(n===3)renderStats();
   updateHdr();
 }
 function goChall(){
@@ -481,15 +687,21 @@ function goChall(){
   document.getElementById('schall').classList.add('active');
   document.getElementById('nb0').classList.add('active');
 }
+function goLesson(){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('slesson').classList.add('active');
+  document.getElementById('nb1').classList.add('active');
+}
 function updateHdr(){
   document.getElementById('hPts').textContent=S.points;
   document.getElementById('hStreak').textContent=S.streak;
   document.getElementById('hDone').textContent=S.done;
 }
 
-// =============================================================
+// ================================================================
 //  CARTE DES MONDES
-// =============================================================
+// ================================================================
 function renderMap(){
   const el=document.getElementById('worldsList');
   el.innerHTML='';
@@ -516,148 +728,306 @@ function renderMap(){
         </div>`).join('')}
       </div>`;
     el.appendChild(div);
-    // Ouvre le premier monde non terminé
     if(!locked&&done<w.ch.length)setTimeout(()=>{const e=document.getElementById('wch'+w.id);if(e)e.classList.add('open');},30);
   });
 }
 function tIcon(t){return{form:'✍️',read:'👁',calc:'🧮',qcm:'🎯',speed:'⚡',cspeed:'⚡🧮',seq:'🔢',fseq:'✍️🔢'}[t]||'▶️';}
 function toggleW(id){const e=document.getElementById('wch'+id);if(e)e.classList.toggle('open');}
 
-// =============================================================
-//  DÉMARRER UN DÉFI
-// =============================================================
+// ================================================================
+//  MODULE LEÇONS
+// ================================================================
+function renderLessons(){
+  const el=document.getElementById('lessonsList');
+  el.innerHTML='';
+  LESSONS.forEach((l,idx)=>{
+    const done=S.lessonsComp[l.id];
+    const locked=idx>0&&!S.lessonsComp[LESSONS[idx-1].id];
+    const div=document.createElement('div');
+    div.className=`lesson-card${done?' done':''}${locked?' locked':''}`;
+    div.onclick=locked?null:()=>startLesson(l.id);
+    div.innerHTML=`
+      <div class="lesson-em">${l.em}</div>
+      <div class="lesson-info">
+        <div class="lesson-num">Leçon ${idx+1}${locked?' — termine la leçon précédente':''}</div>
+        <div class="lesson-title">${l.title}</div>
+        <div class="lesson-sub">${l.sub}</div>
+      </div>
+      <div class="lesson-badge">${done?'✅':locked?'🔒':'▶️'}</div>`;
+    el.appendChild(div);
+  });
+}
+
+function startLesson(lid){
+  const lesson=LESSONS.find(l=>l.id===lid);
+  if(!lesson)return;
+  LSN={lesson,stepIdx:0};
+  goLesson();
+  renderLessonStep();
+}
+
+function renderLessonStep(){
+  const{lesson,stepIdx}=LSN;
+  const step=lesson.steps[stepIdx];
+  const total=lesson.steps.length;
+  const area=document.getElementById('lessonArea');
+
+  // Dots de progression
+  const dots=lesson.steps.map((_,i)=>`<div class="step-dot${i===stepIdx?' curr':i<stepIdx?' done':''}"></div>`).join('');
+  const isLast=stepIdx===total-1;
+
+  let content='';
+
+  if(step.type==='info'){
+    content=`<div class="step-box">
+      <span class="step-icon-big">${step.icon||'📖'}</span>
+      <div class="step-title">${step.title}</div>
+      <div class="step-text">${step.text.replace(/\n/g,'<br>')}</div>
+    </div>`;
+  }
+  else if(step.type==='demo'){
+    content=`<div class="step-box" style="text-align:left">
+      <div class="step-title" style="text-align:center">${step.title}</div>
+      <div class="step-text">${step.text.replace(/\n/g,'<br>')}</div>
+      ${step.hint?`<div class="step-hint">${step.hint}</div>`:''}
+    </div>
+    ${buildSorobanHTML(step.preset,false,false)}`;
+    // Pour demo, on init quand même soroban pour permettre exploration
+  }
+  else if(step.type==='try'){
+    content=`<div class="try-target">
+      <div class="try-target-lbl">Forme ce nombre :</div>
+      <div class="try-target-num">${step.target}</div>
+    </div>
+    <div class="step-box" style="text-align:left;margin-bottom:10px">
+      <div class="step-text">${step.text}</div>
+    </div>
+    ${buildSorobanHTML(null,false,false)}
+    <div class="feedback" id="lfb"></div>`;
+  }
+  else if(step.type==='operation'){
+    content=`<div class="op-card">
+      <div class="op-label">Calcule sur le soroban :</div>
+      <div class="op-depart">Départ : ${step.start}</div>
+      <div class="op-expr">${step.start} ${step.op} ${step.operand} = ?</div>
+    </div>
+    <div class="step-box" style="text-align:left;margin-bottom:10px;padding:12px 16px">
+      <div class="step-text">${step.text}</div>
+      <div class="step-hint">${step.hint}</div>
+    </div>
+    ${buildSorobanHTML(step.start,false,false)}
+    <div class="feedback" id="lfb"></div>`;
+  }
+  else if(step.type==='try_read'){
+    content=`<div class="step-box" style="text-align:left;margin-bottom:10px">
+      <div class="step-title" style="text-align:center;font-size:15px">👁 ${step.title}</div>
+      <div class="step-text">${step.text}</div>
+    </div>
+    ${buildSorobanHTML(step.preset,true,false)}
+    <div class="feedback" id="lfb"></div>
+    <div class="try-ans-row">
+      <input type="number" class="ans-input" id="lain" placeholder="?" onkeydown="if(event.key==='Enter')checkLessonRead()">
+      <button class="btn-ok" onclick="checkLessonRead()">OK</button>
+    </div>`;
+  }
+
+  // Bouton Suivant / Terminer
+  const nextLabel=isLast?'Terminer ✓':'Suivant →';
+  const checkBtn=(step.type==='try')?
+    `<button class="btn-next" onclick="checkLessonTry()">✓ Vérifier</button>`:
+    (step.type==='operation')?
+    `<button class="btn-next" onclick="checkLessonOp()">✓ Vérifier</button>`:
+    (step.type==='try_read')?'':
+    `<button class="btn-next" onclick="nextLessonStep()">${nextLabel}</button>`;
+
+  area.innerHTML=`
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <button class="btn-prev" onclick="goNav(1)">← Leçons</button>
+      <div style="font-size:12px;font-weight:600;color:#aaa">${lesson.em} ${lesson.title}</div>
+      <div style="font-size:12px;font-weight:700;color:#e85d04">${stepIdx+1}/${total}</div>
+    </div>
+    <div class="step-dots">${dots}</div>
+    ${content}
+    <div class="lesson-nav">
+      ${stepIdx>0?`<button class="btn-prev" onclick="prevLessonStep()">←</button>`:''}
+      ${checkBtn}
+    </div>`;
+
+  // Pour try_read, on ajoute bouton OK séparé, pas dans lesson-nav
+  if(step.type==='try_read'){
+    // already has the OK button inline, add Suivant that appears after correct answer
+  }
+
+  // Focus sur input si pertinent
+  if(step.type==='try_read') setTimeout(()=>document.getElementById('lain')?.focus(),200);
+
+  // Si demo, init soroban avec la valeur
+  if(step.type==='demo') initSoroban(step.preset);
+}
+
+function checkLessonTry(){
+  const step=LSN.lesson.steps[LSN.stepIdx];
+  const v=getSorobanVal();
+  const fb=document.getElementById('lfb');
+  if(v===step.target){
+    fb.className='feedback ok';fb.textContent='✅ Parfait ! C\'est bien '+v+' !';
+    okSnd();
+    // Remplace le bouton Vérifier par Suivant
+    const nav=document.querySelector('.lesson-nav');
+    if(nav){
+      const isLast=LSN.stepIdx===LSN.lesson.steps.length-1;
+      nav.innerHTML=`${LSN.stepIdx>0?'<button class="btn-prev" onclick="prevLessonStep()">←</button>':''}
+        <button class="btn-next" onclick="nextLessonStep()">${isLast?'Terminer ✓':'Suivant →'}</button>`;
+    }
+  }else{
+    fb.className='feedback ko';fb.textContent='❌ Le soroban montre '+v+'. Cherche encore !';errSnd();
+  }
+}
+
+function checkLessonOp(){
+  const step=LSN.lesson.steps[LSN.stepIdx];
+  const v=getSorobanVal();
+  const fb=document.getElementById('lfb');
+  if(v===step.result){
+    fb.className='feedback ok';
+    fb.textContent='✅ Excellent ! '+step.start+' '+step.op+' '+step.operand+' = '+v+' !';
+    okSnd();
+    const nav=document.querySelector('.lesson-nav');
+    if(nav){
+      const isLast=LSN.stepIdx===LSN.lesson.steps.length-1;
+      nav.innerHTML=`${LSN.stepIdx>0?'<button class="btn-prev" onclick="prevLessonStep()">←</button>':''}
+        <button class="btn-next" onclick="nextLessonStep()">${isLast?'Terminer ✓':'Suivant →'}</button>`;
+    }
+  }else{
+    fb.className='feedback ko';
+    fb.textContent='❌ Le soroban montre '+v+'. Résultat attendu : '+step.result+'. Relis l\'astuce !';
+    errSnd();
+  }
+}
+
+function checkLessonRead(){
+  const step=LSN.lesson.steps[LSN.stepIdx];
+  const v=parseInt(document.getElementById('lain')?.value)||0;
+  const fb=document.getElementById('lfb');
+  if(v===step.preset){
+    fb.className='feedback ok';fb.textContent='✅ Excellent ! C\'était bien '+step.preset+' !';
+    const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=step.preset;
+    okSnd();
+    const tryRow=document.querySelector('.try-ans-row');
+    if(tryRow)tryRow.style.display='none';
+    const nav=document.querySelector('.lesson-nav');
+    if(nav){
+      const isLast=LSN.stepIdx===LSN.lesson.steps.length-1;
+      nav.innerHTML=`${LSN.stepIdx>0?'<button class="btn-prev" onclick="prevLessonStep()">←</button>':''}
+        <button class="btn-next" onclick="nextLessonStep()">${isLast?'Terminer ✓':'Suivant →'}</button>`;
+    }
+  }else{
+    fb.className='feedback ko';fb.textContent='❌ Pas tout à fait. Relis les boules tige par tige !';errSnd();
+    const ain=document.getElementById('lain');if(ain){ain.value='';ain.focus();}
+  }
+}
+
+function nextLessonStep(){
+  const{lesson,stepIdx}=LSN;
+  const total=lesson.steps.length;
+  if(stepIdx>=total-1){
+    // Leçon terminée
+    if(!S.lessonsComp[lesson.id]){
+      S.lessonsComp[lesson.id]=true;
+      S.lessonsOk=(S.lessonsOk||0)+1;
+      checkBadges();save();
+    }
+    confetti();okSnd();
+    openModal('🎓','Leçon terminée !',null,`Tu as maîtrisé : "${lesson.title}".\n${S.lessonsOk}/6 leçons complétées !`);
+  }else{
+    LSN.stepIdx++;
+    renderLessonStep();
+    document.querySelector('.main').scrollTop=0;
+  }
+}
+
+function prevLessonStep(){
+  if(LSN.stepIdx>0){LSN.stepIdx--;renderLessonStep();}
+  document.querySelector('.main').scrollTop=0;
+}
+
+// ================================================================
+//  DÉFIS — DÉMARRAGE
+// ================================================================
 function startCh(cid){
   let ch=null,world=null;
   WORLDS.forEach(w=>w.ch.forEach(c=>{if(c.id===cid){ch=c;world=w;}}));
   if(!ch)return;
   stopTimer();
   ACT={ch,world,attempts:0,perfect:true,seqIdx:0,hideVal:false};
-  goChall();
-  renderCh();
+  goChall();renderCh();
 }
-
 function renderCh(){
-  const{ch,world}=ACT;
+  const{ch}=ACT;
   const fns={form:rForm,read:rRead,calc:rCalc,qcm:rQCM,speed:rSpeed,cspeed:rCSpeed,seq:rSeq,fseq:rFSeq};
-  (fns[ch.type]||rForm)(ch,world);
+  (fns[ch.type]||rForm)(ch,ACT.world);
 }
-
-// --- Entête commune ---
-function chHdr(ch,world){
-  return`<div class="ch-header">
-    <span class="ch-world-tag c${world.ci}">${world.em} ${world.name}</span>
-    <span class="ch-err-tag" id="chErr">0 erreur(s)</span>
-  </div><div class="pbar"><div class="pfill" id="pf"></div></div>`;
+function chHdr(ch,w){
+  return`<div class="ch-header"><span class="ch-world-tag c${w.ci}">${w.em} ${w.name}</span><span class="ch-err-tag" id="chErr">0 erreur(s)</span></div><div class="pbar"><div class="pfill" id="pf"></div></div>`;
 }
 function setPf(p){const e=document.getElementById('pf');if(e)e.style.width=p+'%';}
 function setErr(n){const e=document.getElementById('chErr');if(e)e.textContent=n+' erreur(s)';}
 
-// =============================================================
-//  FORM — soroban vide, enfant forme le nombre
-// =============================================================
-function rForm(ch,world){
+function rForm(ch,w){
   ACT.hideVal=false;
-  document.getElementById('challArea').innerHTML=`${chHdr(ch,world)}
-    <div class="qbox">
-      <div class="q-tag">✍️ Formation</div>
-      <div class="q-main">${ch.n}</div>
-      <div class="q-sub">${ch.label}</div>
-      <div class="q-hint">👆 Déplace les boules pour former ce nombre</div>
-    </div>
-    ${buildSorobanHTML(null,false)}
+  document.getElementById('challArea').innerHTML=`${chHdr(ch,w)}
+    <div class="qbox"><div class="q-tag">✍️ Formation</div><div class="q-main">${ch.n}</div><div class="q-sub">${ch.label}</div><div class="q-hint">👆 Déplace les boules pour former ce nombre</div></div>
+    ${buildSorobanHTML(null,false,false)}
     <div class="feedback" id="fb"></div>
     <button class="btn-check" onclick="checkForm()">✓ Vérifier</button>
     <button class="btn-back" onclick="goNav(0)">← Retour</button>`;
 }
 function checkForm(){
   const v=getSorobanVal(),fb=document.getElementById('fb');
-  if(v===ACT.ch.n){
-    fb.className='feedback ok';fb.textContent='✅ Parfait ! C\'est bien '+v+' !';setPf(100);
-    setTimeout(chSuccess,1000);
-  }else{
-    ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);
-    fb.className='feedback ko';fb.textContent='❌ Le soroban montre '+v+'. Essaie encore !';errSnd();
-  }
+  if(v===ACT.ch.n){fb.className='feedback ok';fb.textContent='✅ Parfait ! C\'est bien '+v+' !';setPf(100);setTimeout(chSuccess,1000);}
+  else{ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);fb.className='feedback ko';fb.textContent='❌ Le soroban montre '+v+'. Essaie encore !';errSnd();}
 }
 
-// =============================================================
-//  READ — soroban préréglé, enfant lit et tape (valeur cachée)
-// =============================================================
-function rRead(ch,world){
+function rRead(ch,w){
   ACT.hideVal=true;
-  document.getElementById('challArea').innerHTML=`${chHdr(ch,world)}
-    <div class="qbox">
-      <div class="q-tag">👁 Lecture</div>
-      <div class="q-main">👁</div>
-      <div class="q-sub">${ch.label}</div>
-      <div class="q-hint">Lis le soroban et écris le nombre</div>
-    </div>
-    ${buildSorobanHTML(ch.n,true)}
+  document.getElementById('challArea').innerHTML=`${chHdr(ch,w)}
+    <div class="qbox"><div class="q-tag">👁 Lecture</div><div class="q-main">👁</div><div class="q-sub">${ch.label}</div><div class="q-hint">Lis les boules et écris le nombre</div></div>
+    ${buildSorobanHTML(ch.n,true,false)}
     <div class="feedback" id="fb"></div>
-    <div class="ans-row">
-      <input type="number" class="ans-input" id="ain" placeholder="?" onkeydown="if(event.key==='Enter')checkRead()">
-      <button class="btn-ok" onclick="checkRead()">OK</button>
-    </div>
+    <div class="ans-row"><input type="number" class="ans-input" id="ain" placeholder="?" onkeydown="if(event.key==='Enter')checkRead()"><button class="btn-ok" onclick="checkRead()">OK</button></div>
     <button class="btn-back" onclick="goNav(0)">← Retour</button>`;
   setTimeout(()=>document.getElementById('ain')?.focus(),200);
 }
 function checkRead(){
   const v=parseInt(document.getElementById('ain')?.value)||0,fb=document.getElementById('fb');
-  if(v===ACT.ch.n){
-    fb.className='feedback ok';fb.textContent='✅ Excellent ! C\'était bien '+ACT.ch.n+' !';setPf(100);
-    const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=ACT.ch.n;
-    setTimeout(chSuccess,1000);
-  }else{
-    ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);
-    fb.className='feedback ko';fb.textContent='❌ Regarde bien chaque tige !';
-    const ain=document.getElementById('ain');if(ain){ain.value='';ain.focus();}errSnd();
-  }
+  if(v===ACT.ch.n){fb.className='feedback ok';fb.textContent='✅ Excellent ! C\'était bien '+ACT.ch.n+' !';setPf(100);const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=ACT.ch.n;setTimeout(chSuccess,1000);}
+  else{ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);fb.className='feedback ko';fb.textContent='❌ Regarde bien chaque tige !';const ain=document.getElementById('ain');if(ain){ain.value='';ain.focus();}errSnd();}
 }
 
-// =============================================================
-//  CALC — opération affichée, soroban vide, enfant calcule
-// =============================================================
-function rCalc(ch,world){
+function rCalc(ch,w){
   ACT.hideVal=false;
-  document.getElementById('challArea').innerHTML=`${chHdr(ch,world)}
-    <div class="qbox">
-      <div class="q-tag">🧮 Calcul</div>
-      <div class="q-main">${ch.a} ${ch.op} ${ch.b}</div>
-      <div class="q-sub">${ch.label}</div>
-      <div class="q-hint">Calcule le résultat, puis forme-le sur le soroban</div>
-    </div>
-    ${buildSorobanHTML(null,false)}
+  document.getElementById('challArea').innerHTML=`${chHdr(ch,w)}
+    <div class="qbox"><div class="q-tag">🧮 Calcul</div><div class="q-main">${ch.a} ${ch.op} ${ch.b}</div><div class="q-sub">${ch.label}</div><div class="q-hint">Calcule le résultat, puis forme-le sur le soroban</div></div>
+    ${buildSorobanHTML(null,false,false)}
     <div class="feedback" id="fb"></div>
     <button class="btn-check" onclick="checkCalc()">✓ Vérifier</button>
     <button class="btn-back" onclick="goNav(0)">← Retour</button>`;
 }
 function checkCalc(){
   const v=getSorobanVal(),fb=document.getElementById('fb');
-  if(v===ACT.ch.n){
-    fb.className='feedback ok';fb.textContent='✅ Bravo ! '+ACT.ch.a+' '+ACT.ch.op+' '+ACT.ch.b+' = '+v+' !';setPf(100);
-    setTimeout(chSuccess,1000);
-  }else{
-    ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);
-    fb.className='feedback ko';fb.textContent='❌ Le soroban montre '+v+'. Recalcule !';errSnd();
-  }
+  if(v===ACT.ch.n){fb.className='feedback ok';fb.textContent='✅ Bravo ! '+ACT.ch.a+' '+ACT.ch.op+' '+ACT.ch.b+' = '+v+' !';setPf(100);setTimeout(chSuccess,1000);}
+  else{ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);fb.className='feedback ko';fb.textContent='❌ Le soroban montre '+v+'. Recalcule !';errSnd();}
 }
 
-// =============================================================
-//  QCM — soroban préréglé, 4 choix (valeur cachée)
-// =============================================================
-function rQCM(ch,world){
+function rQCM(ch,w){
   ACT.hideVal=true;
   const opts=new Set([ch.n]);
   while(opts.size<4){const d=Math.floor(Math.random()*8)+1;const c=ch.n+(Math.random()>.5?d:-d);if(c>=0)opts.add(c);}
   const arr=Array.from(opts).sort(()=>Math.random()-.5).slice(0,4);
-  if(!arr.includes(ch.n)){arr[Math.floor(Math.random()*4)]=ch.n;}
-  document.getElementById('challArea').innerHTML=`${chHdr(ch,world)}
-    <div class="qbox">
-      <div class="q-tag">🎯 Choix Multiple</div>
-      <div class="q-main">?</div>
-      <div class="q-sub">${ch.label}</div>
-    </div>
-    ${buildSorobanHTML(ch.n,true)}
+  if(!arr.includes(ch.n))arr[0]=ch.n;
+  document.getElementById('challArea').innerHTML=`${chHdr(ch,w)}
+    <div class="qbox"><div class="q-tag">🎯 Choix Multiple</div><div class="q-main">?</div><div class="q-sub">${ch.label}</div></div>
+    ${buildSorobanHTML(ch.n,true,false)}
     <div class="feedback" id="fb"></div>
     <div class="qcm-grid">${arr.map(o=>`<button class="qcm-btn" onclick="checkQCM(${o},this)">${o}</button>`).join('')}</div>
     <button class="btn-back" onclick="goNav(0)">← Retour</button>`;
@@ -665,229 +1035,130 @@ function rQCM(ch,world){
 function checkQCM(v,btn){
   document.querySelectorAll('.qcm-btn').forEach(b=>b.disabled=true);
   const fb=document.getElementById('fb');
-  if(v===ACT.ch.n){
-    btn.classList.add('correct');
-    fb.className='feedback ok';fb.textContent='✅ Oui ! C\'était '+ACT.ch.n+' !';setPf(100);
-    const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=ACT.ch.n;
-    setTimeout(chSuccess,1000);
-  }else{
-    btn.classList.add('wrong');
-    document.querySelectorAll('.qcm-btn').forEach(b=>{if(parseInt(b.textContent)===ACT.ch.n)b.classList.add('correct');});
-    ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);
-    fb.className='feedback ko';fb.textContent='❌ Non ! La réponse était '+ACT.ch.n;errSnd();
-    setTimeout(()=>{document.querySelectorAll('.qcm-btn').forEach(b=>{b.disabled=false;b.classList.remove('wrong','correct');});fb.style.display='none';},1600);
-  }
+  if(v===ACT.ch.n){btn.classList.add('correct');fb.className='feedback ok';fb.textContent='✅ Oui ! C\'était '+ACT.ch.n+' !';setPf(100);const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=ACT.ch.n;setTimeout(chSuccess,1000);}
+  else{btn.classList.add('wrong');document.querySelectorAll('.qcm-btn').forEach(b=>{if(parseInt(b.textContent)===ACT.ch.n)b.classList.add('correct');});ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);fb.className='feedback ko';fb.textContent='❌ Non ! La réponse était '+ACT.ch.n;errSnd();setTimeout(()=>{document.querySelectorAll('.qcm-btn').forEach(b=>{b.disabled=false;b.classList.remove('wrong','correct');});fb.style.display='none';},1600);}
 }
 
-// =============================================================
-//  SPEED — soroban préréglé + chrono (valeur cachée)
-// =============================================================
-function rSpeed(ch,world){
-  ACT.hideVal=true;
-  const t=ch.time||15;
-  document.getElementById('challArea').innerHTML=`${chHdr(ch,world)}
-    <div class="qbox">
-      <div class="q-tag">⚡ Vitesse</div>
-      <div class="q-main">⚡</div>
-      <div class="q-sub">${ch.label}</div>
-    </div>
+function rSpeed(ch,w){
+  ACT.hideVal=true;const t=ch.time||15;
+  document.getElementById('challArea').innerHTML=`${chHdr(ch,w)}
+    <div class="qbox"><div class="q-tag">⚡ Vitesse</div><div class="q-main">⚡</div><div class="q-sub">${ch.label}</div></div>
     <div class="chrono" id="chrono">${t}</div>
-    ${buildSorobanHTML(ch.n,true)}
+    ${buildSorobanHTML(ch.n,true,false)}
     <div class="feedback" id="fb"></div>
-    <div class="ans-row">
-      <input type="number" class="ans-input" id="ain" placeholder="?" onkeydown="if(event.key==='Enter')checkSpeed()">
-      <button class="btn-ok" onclick="checkSpeed()">OK</button>
-    </div>
+    <div class="ans-row"><input type="number" class="ans-input" id="ain" placeholder="?" onkeydown="if(event.key==='Enter')checkSpeed()"><button class="btn-ok" onclick="checkSpeed()">OK</button></div>
     <button class="btn-back" onclick="stopTimer();goNav(0)">← Retour</button>`;
-  setTimeout(()=>document.getElementById('ain')?.focus(),200);
-  startTimer(t);
+  setTimeout(()=>document.getElementById('ain')?.focus(),200);startTimer(t);
 }
 function checkSpeed(){
-  stopTimer();
-  const v=parseInt(document.getElementById('ain')?.value)||0,fb=document.getElementById('fb');
-  if(v===ACT.ch.n){
-    fb.className='feedback ok';fb.textContent='⚡ Rapide et correct ! C\'était '+ACT.ch.n+' !';setPf(100);
-    const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=ACT.ch.n;
-    sd.speed++;setTimeout(chSuccess,900);
-  }else{
-    ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);
-    fb.className='feedback ko';fb.textContent='❌ Pas tout à fait ! C\'était '+ACT.ch.n;errSnd();
-    const ain=document.getElementById('ain');if(ain){ain.value='';ain.focus();}
-    startTimer(ACT.ch.time||15);
-  }
+  stopTimer();const v=parseInt(document.getElementById('ain')?.value)||0,fb=document.getElementById('fb');
+  if(v===ACT.ch.n){fb.className='feedback ok';fb.textContent='⚡ Rapide ! C\'était '+ACT.ch.n+' !';setPf(100);const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=ACT.ch.n;sd.speed++;setTimeout(chSuccess,900);}
+  else{ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);fb.className='feedback ko';fb.textContent='❌ C\'était '+ACT.ch.n;errSnd();const ain=document.getElementById('ain');if(ain){ain.value='';ain.focus();}startTimer(ACT.ch.time||15);}
 }
 
-// =============================================================
-//  CSPEED — calc + chrono, soroban vide, enfant forme vite
-// =============================================================
-function rCSpeed(ch,world){
-  ACT.hideVal=false;
-  const t=ch.time||15;
-  document.getElementById('challArea').innerHTML=`${chHdr(ch,world)}
-    <div class="qbox">
-      <div class="q-tag">⚡🧮 Calcul Rapide</div>
-      <div class="q-main">${ch.a} ${ch.op} ${ch.b}</div>
-      <div class="q-sub">Calcule et forme le résultat !</div>
-    </div>
+function rCSpeed(ch,w){
+  ACT.hideVal=false;const t=ch.time||15;
+  document.getElementById('challArea').innerHTML=`${chHdr(ch,w)}
+    <div class="qbox"><div class="q-tag">⚡🧮 Calcul Rapide</div><div class="q-main">${ch.a} ${ch.op} ${ch.b}</div><div class="q-sub">Calcule et forme le résultat !</div></div>
     <div class="chrono" id="chrono">${t}</div>
-    ${buildSorobanHTML(null,false)}
+    ${buildSorobanHTML(null,false,false)}
     <div class="feedback" id="fb"></div>
     <button class="btn-check" onclick="checkCSpeed()">✓ Vérifier</button>
     <button class="btn-back" onclick="stopTimer();goNav(0)">← Retour</button>`;
   startTimer(t);
 }
 function checkCSpeed(){
-  stopTimer();
-  const v=getSorobanVal(),fb=document.getElementById('fb');
-  if(v===ACT.ch.n){
-    fb.className='feedback ok';fb.textContent='⚡ Parfait ! '+ACT.ch.a+' '+ACT.ch.op+' '+ACT.ch.b+' = '+v+' !';setPf(100);
-    sd.speed++;setTimeout(chSuccess,900);
-  }else{
-    ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);
-    fb.className='feedback ko';fb.textContent='❌ Soroban: '+v+'. Réponse: '+ACT.ch.n;errSnd();
-    startTimer(ACT.ch.time||15);
-  }
+  stopTimer();const v=getSorobanVal(),fb=document.getElementById('fb');
+  if(v===ACT.ch.n){fb.className='feedback ok';fb.textContent='⚡ Parfait ! '+ACT.ch.a+' '+ACT.ch.op+' '+ACT.ch.b+' = '+v+' !';setPf(100);sd.speed++;setTimeout(chSuccess,900);}
+  else{ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);fb.className='feedback ko';fb.textContent='❌ Soroban: '+v+'. Réponse: '+ACT.ch.n;errSnd();startTimer(ACT.ch.time||15);}
 }
 
-// =============================================================
-//  SEQ — série de sorobans à lire
-// =============================================================
-function rSeq(ch,world){ACT.seqIdx=0;rSeqStep(ch,world);}
-function rSeqStep(ch,world){
-  ACT.hideVal=true;
-  const idx=ACT.seqIdx,n=ch.seq[idx];
+function rSeq(ch,w){ACT.seqIdx=0;rSeqStep(ch,w);}
+function rSeqStep(ch,w){
+  ACT.hideVal=true;const idx=ACT.seqIdx,n=ch.seq[idx];
   const steps=ch.seq.map((s,i)=>`<div class="seq-step${i===idx?' curr':i<idx?' done':''}">${i<idx?'✓':s}</div>`).join('');
-  document.getElementById('challArea').innerHTML=`${chHdr(ch,world)}
-    <div class="qbox">
-      <div class="q-tag">🔢 Séquence ${idx+1}/${ch.seq.length}</div>
-      <div class="q-sub">${ch.label}</div>
-      <div class="seq-steps">${steps}</div>
-    </div>
-    ${buildSorobanHTML(n,true)}
+  document.getElementById('challArea').innerHTML=`${chHdr(ch,w)}
+    <div class="qbox"><div class="q-tag">🔢 Séquence ${idx+1}/${ch.seq.length}</div><div class="q-sub">${ch.label}</div><div class="seq-steps">${steps}</div></div>
+    ${buildSorobanHTML(n,true,false)}
     <div class="feedback" id="fb"></div>
-    <div class="ans-row">
-      <input type="number" class="ans-input" id="ain" placeholder="?" onkeydown="if(event.key==='Enter')checkSeqStep()">
-      <button class="btn-ok" onclick="checkSeqStep()">OK</button>
-    </div>
+    <div class="ans-row"><input type="number" class="ans-input" id="ain" placeholder="?" onkeydown="if(event.key==='Enter')checkSeqStep()"><button class="btn-ok" onclick="checkSeqStep()">OK</button></div>
     <button class="btn-back" onclick="goNav(0)">← Retour</button>`;
   setTimeout(()=>document.getElementById('ain')?.focus(),200);
 }
 function checkSeqStep(){
-  const v=parseInt(document.getElementById('ain')?.value)||0;
-  const ch=ACT.ch,n=ch.seq[ACT.seqIdx],fb=document.getElementById('fb');
-  if(v===n){
-    const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=n;
-    ACT.seqIdx++;setPf(Math.round(100*ACT.seqIdx/ch.seq.length));
-    if(ACT.seqIdx>=ch.seq.length){setTimeout(chSuccess,700);}
+  const v=parseInt(document.getElementById('ain')?.value)||0,ch=ACT.ch,n=ch.seq[ACT.seqIdx],fb=document.getElementById('fb');
+  if(v===n){const ve=document.getElementById('sorobanVal');if(ve)ve.textContent=n;ACT.seqIdx++;setPf(Math.round(100*ACT.seqIdx/ch.seq.length));
+    if(ACT.seqIdx>=ch.seq.length)setTimeout(chSuccess,700);
     else{fb.className='feedback ok';fb.textContent='✅ Suivant !';setTimeout(()=>rSeqStep(ch,ACT.world),700);}
-  }else{
-    ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);
-    fb.className='feedback ko';fb.textContent='❌ Regarde bien les boules !';errSnd();
-    const ain=document.getElementById('ain');if(ain){ain.value='';ain.focus();}
-  }
+  }else{ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);fb.className='feedback ko';fb.textContent='❌ Regarde bien les boules !';errSnd();const ain=document.getElementById('ain');if(ain){ain.value='';ain.focus();}}
 }
 
-// =============================================================
-//  FSEQ — série de nombres à former sur le soroban
-// =============================================================
-function rFSeq(ch,world){ACT.seqIdx=0;rFSeqStep(ch,world);}
-function rFSeqStep(ch,world){
-  ACT.hideVal=false;
-  const idx=ACT.seqIdx,n=ch.seq[idx];
+function rFSeq(ch,w){ACT.seqIdx=0;rFSeqStep(ch,w);}
+function rFSeqStep(ch,w){
+  ACT.hideVal=false;const idx=ACT.seqIdx,n=ch.seq[idx];
   const steps=ch.seq.map((s,i)=>`<div class="seq-step${i===idx?' curr':i<idx?' done':''}">${i<idx?'✓':s}</div>`).join('');
-  document.getElementById('challArea').innerHTML=`${chHdr(ch,world)}
-    <div class="qbox">
-      <div class="q-tag">✍️ Formation ${idx+1}/${ch.seq.length}</div>
-      <div class="q-main">${n}</div>
-      <div class="q-sub">${ch.label}</div>
-      <div class="seq-steps">${steps}</div>
-    </div>
-    ${buildSorobanHTML(null,false)}
+  document.getElementById('challArea').innerHTML=`${chHdr(ch,w)}
+    <div class="qbox"><div class="q-tag">✍️ Formation ${idx+1}/${ch.seq.length}</div><div class="q-main">${n}</div><div class="q-sub">${ch.label}</div><div class="seq-steps">${steps}</div></div>
+    ${buildSorobanHTML(null,false,false)}
     <div class="feedback" id="fb"></div>
     <button class="btn-check" onclick="checkFSeqStep()">✓ Vérifier</button>
     <button class="btn-back" onclick="goNav(0)">← Retour</button>`;
 }
 function checkFSeqStep(){
   const v=getSorobanVal(),ch=ACT.ch,n=ch.seq[ACT.seqIdx],fb=document.getElementById('fb');
-  if(v===n){
-    ACT.seqIdx++;setPf(Math.round(100*ACT.seqIdx/ch.seq.length));
-    if(ACT.seqIdx>=ch.seq.length){setTimeout(chSuccess,700);}
+  if(v===n){ACT.seqIdx++;setPf(Math.round(100*ACT.seqIdx/ch.seq.length));
+    if(ACT.seqIdx>=ch.seq.length)setTimeout(chSuccess,700);
     else{fb.className='feedback ok';fb.textContent='✅ Parfait ! Suivant !';setTimeout(()=>rFSeqStep(ch,ACT.world),800);}
-  }else{
-    ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);
-    fb.className='feedback ko';fb.textContent='❌ Soroban: '+v+'. Cherche encore !';errSnd();
-  }
+  }else{ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);fb.className='feedback ko';fb.textContent='❌ Soroban: '+v+'. Cherche encore !';errSnd();}
 }
 
-// =============================================================
-//  SUCCÈS
-// =============================================================
+// ================================================================
+//  SUCCÈS DÉFI
+// ================================================================
 function chSuccess(){
   stopTimer();
   const{ch,world,perfect}=ACT;
   const bonus=perfect?Math.floor(ch.pts*.5):0;
   const total=ch.pts+bonus;
   const already=S.comp[ch.id];
-  if(!already){
-    S.points+=total;S.done++;S.comp[ch.id]=true;
-    sd.today++;sd.sessPoints+=total;
-    if(perfect)sd.perfect++;
-    checkBadges();save();
-  }
+  if(!already){S.points+=total;S.done++;S.comp[ch.id]=true;sd.today++;sd.sessPoints+=total;if(perfect)sd.perfect++;checkBadges();save();}
   confetti();okSnd();
-  openModal(
-    '🎉',
-    already?'Défi revu !':'Défi réussi !',
-    already?null:'+'+total+'pts'+(perfect?' (Parfait ! +'+bonus+')':''),
-    already?'Bonne révision !':perfect?'Aucune erreur, incroyable !':'Continue comme ça !'
-  );
+  openModal('🎉',already?'Défi revu !':'Défi réussi !',already?null:'+'+total+'pts'+(perfect?' (Parfait ! +'+bonus+')':''),already?'Bonne révision !':perfect?'Aucune erreur, incroyable !':'Continue comme ça !');
   ACT=null;updateHdr();
 }
 
-// =============================================================
+// ================================================================
 //  CHRONO
-// =============================================================
+// ================================================================
 function startTimer(s){
   stopTimer();let t=s;
   const el=document.getElementById('chrono');if(el)el.textContent=t;
-  timerID=setInterval(()=>{
-    t--;
-    const el=document.getElementById('chrono');
-    if(el){el.textContent=t;el.classList.toggle('danger',t<=5);}
-    if(t<=0){stopTimer();timeUp();}
-  },1000);
+  timerID=setInterval(()=>{t--;const el=document.getElementById('chrono');if(el){el.textContent=t;el.classList.toggle('danger',t<=5);}if(t<=0){stopTimer();timeUp();}},1000);
 }
 function stopTimer(){if(timerID){clearInterval(timerID);timerID=null;}}
 function timeUp(){
-  const fb=document.getElementById('fb');
-  if(fb){fb.className='feedback ko';fb.textContent='⏰ Temps écoulé ! Réessaie !';}
-  errSnd();
-  if(ACT){ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);}
+  const fb=document.getElementById('fb');if(fb){fb.className='feedback ko';fb.textContent='⏰ Temps écoulé ! Réessaie !';}
+  errSnd();if(ACT){ACT.attempts++;ACT.perfect=false;setErr(ACT.attempts);}
   setTimeout(()=>{if(ACT)renderCh();},1600);
 }
 
-// =============================================================
+// ================================================================
 //  BADGES
-// =============================================================
+// ================================================================
 function checkBadges(){
   BADGES.forEach(b=>{
-    if(!S.badges[b.id]&&b.cond(S)){
-      S.badges[b.id]=true;
-      setTimeout(()=>openModal(b.em,'Nouveau badge !',null,'Tu as débloqué : "'+b.name+'"'),800);
-    }
+    if(!S.badges[b.id]&&b.cond(S)){S.badges[b.id]=true;setTimeout(()=>openModal(b.em,'Nouveau badge !',null,'Tu as débloqué : "'+b.name+'"'),800);}
   });
 }
 
-// =============================================================
-//  REWARDS & STATS
-// =============================================================
+// ================================================================
+//  SUCCÈS & STATS
+// ================================================================
 function renderRewards(){
   document.getElementById('rStreak').textContent=S.streak;
   document.getElementById('badgeGrid').innerHTML=BADGES.map(b=>`
     <div class="badge-item${S.badges[b.id]?' ok':''}">
-      <div class="badge-em">${b.em}</div>
-      <div class="badge-name">${b.name}</div>
-      <div class="badge-cond">${b.hint}</div>
+      <div class="badge-em">${b.em}</div><div class="badge-name">${b.name}</div><div class="badge-cond">${b.hint}</div>
     </div>`).join('');
   document.getElementById('missionList').innerHTML=MISSIONS.map(m=>{const d=m.check(sd);return`
     <div class="mission-item${d?' done':''}">
@@ -901,21 +1172,14 @@ function renderStats(){
   document.getElementById('stBest').textContent=S.bestStreak;
   document.getElementById('stBadge').textContent=Object.keys(S.badges||{}).length;
   document.getElementById('worldProg').innerHTML=WORLDS.map(w=>{
-    const done=w.ch.filter(c=>S.comp[c.id]).length;
-    const pct=Math.round(100*done/w.ch.length);
-    return`<div style="margin-bottom:10px">
-      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
-        <span>${w.em} ${w.name}</span><span>${done}/${w.ch.length}</span>
-      </div>
-      <div style="height:8px;background:#eee;border-radius:4px;overflow:hidden">
-        <div class="c${w.ci}" style="height:100%;width:${pct}%;border-radius:4px;transition:.4s"></div>
-      </div>
-    </div>`;}).join('');
+    const done=w.ch.filter(c=>S.comp[c.id]).length;const pct=Math.round(100*done/w.ch.length);
+    return`<div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>${w.em} ${w.name}</span><span>${done}/${w.ch.length}</span></div><div style="height:8px;background:#eee;border-radius:4px;overflow:hidden"><div class="c${w.ci}" style="height:100%;width:${pct}%;border-radius:4px;transition:.4s"></div></div></div>`;
+  }).join('');
 }
 
-// =============================================================
+// ================================================================
 //  MODAL
-// =============================================================
+// ================================================================
 function openModal(em,title,pts,text){
   document.getElementById('mEm').textContent=em;
   document.getElementById('mTitle').textContent=title;
@@ -924,75 +1188,26 @@ function openModal(em,title,pts,text){
   document.getElementById('mText').textContent=text||'';
   document.getElementById('modal').classList.add('open');
 }
-function closeModal(){document.getElementById('modal').classList.remove('open');goNav(0);}
-
-// =============================================================
-//  SONS
-// =============================================================
-function beadSnd(){
-  try{
-    const ctx=new(window.AudioContext||window.webkitAudioContext)();
-    const o=ctx.createOscillator(),g=ctx.createGain();
-    o.connect(g);g.connect(ctx.destination);
-    o.type='sine';o.frequency.value=500+Math.random()*300;
-    g.gain.setValueAtTime(.1,ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.07);
-    o.start();o.stop(ctx.currentTime+.08);
-  }catch(e){}
-}
-function okSnd(){
-  try{
-    const ctx=new(window.AudioContext||window.webkitAudioContext)();
-    [523,659,784,1047].forEach((f,i)=>{
-      const o=ctx.createOscillator(),g=ctx.createGain();
-      o.connect(g);g.connect(ctx.destination);
-      o.type='sine';o.frequency.value=f;
-      g.gain.setValueAtTime(.18,ctx.currentTime+i*.1);
-      g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+i*.1+.18);
-      o.start(ctx.currentTime+i*.1);o.stop(ctx.currentTime+i*.1+.2);
-    });
-  }catch(e){}
-}
-function errSnd(){
-  try{
-    const ctx=new(window.AudioContext||window.webkitAudioContext)();
-    [300,240].forEach((f,i)=>{
-      const o=ctx.createOscillator(),g=ctx.createGain();
-      o.connect(g);g.connect(ctx.destination);
-      o.type='sawtooth';o.frequency.value=f;
-      g.gain.setValueAtTime(.12,ctx.currentTime+i*.14);
-      g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+i*.14+.18);
-      o.start(ctx.currentTime+i*.14);o.stop(ctx.currentTime+i*.14+.2);
-    });
-  }catch(e){}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  // Retour à la bonne section
+  if(LSN&&!ACT){goNav(1);}else{goNav(0);}
+  LSN=null;
 }
 
-// =============================================================
-//  CONFETTI
-// =============================================================
+// ================================================================
+//  SONS & EFFETS
+// ================================================================
+function beadSnd(){try{const ctx=new(window.AudioContext||window.webkitAudioContext)();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.value=500+Math.random()*300;g.gain.setValueAtTime(.1,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.07);o.start();o.stop(ctx.currentTime+.08);}catch(e){}}
+function okSnd(){try{const ctx=new(window.AudioContext||window.webkitAudioContext)();[523,659,784,1047].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.18,ctx.currentTime+i*.1);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+i*.1+.18);o.start(ctx.currentTime+i*.1);o.stop(ctx.currentTime+i*.1+.2);});}catch(e){}}
+function errSnd(){try{const ctx=new(window.AudioContext||window.webkitAudioContext)();[300,240].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sawtooth';o.frequency.value=f;g.gain.setValueAtTime(.12,ctx.currentTime+i*.14);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+i*.14+.18);o.start(ctx.currentTime+i*.14);o.stop(ctx.currentTime+i*.14+.2);});}catch(e){}}
 const CC=['#e85d04','#f48c06','#43e97b','#4facfe','#f093fb','#ffd89b','#ff6b9d','#a78bfa'];
-function confetti(){
-  for(let i=0;i<30;i++){
-    const el=document.createElement('div');
-    el.className='cpiece';
-    el.style.cssText=`left:${Math.random()*100}vw;background:${CC[i%CC.length]};`+
-      `animation-duration:${.9+Math.random()*1.3}s;animation-delay:${Math.random()*.5}s;`+
-      `transform:rotate(${Math.random()*360}deg);width:${6+Math.random()*6}px;height:${10+Math.random()*8}px`;
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),2600);
-  }
-}
+function confetti(){for(let i=0;i<30;i++){const el=document.createElement('div');el.className='cpiece';el.style.cssText=`left:${Math.random()*100}vw;background:${CC[i%CC.length]};animation-duration:${.9+Math.random()*1.3}s;animation-delay:${Math.random()*.5}s;transform:rotate(${Math.random()*360}deg);width:${6+Math.random()*6}px;height:${10+Math.random()*8}px`;document.body.appendChild(el);setTimeout(()=>el.remove(),2600);}}
 
-// =============================================================
-//  RESET
-// =============================================================
-function resetGame(){
-  if(confirm('Effacer toute la progression ?')){localStorage.removeItem('sdv3');location.reload();}
-}
-
-// =============================================================
-//  INIT
-// =============================================================
+// ================================================================
+//  RESET & INIT
+// ================================================================
+function resetGame(){if(confirm('Effacer toute la progression ?')){localStorage.removeItem('sdv4');location.reload();}}
 updateHdr();renderMap();
 </script>
 </body>
